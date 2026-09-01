@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started — Rana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- This page is structure only right now: no JavaScript, no validation,
+       no navigation. It just lays out the questions. Interactivity comes
+       in a later step. -->
+  <main class="onboarding">
+    <h1>Let's build your plan</h1>
+    <p class="intro">A few questions so we can put together a plan that fits you.</p>
+
+    <form>
+      <!-- Name -->
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <!-- Height / Weight -->
+      <div class="field-row">
+        <div class="field">
+          <label for="height">Height (in)</label>
+          <input type="number" id="height" name="height">
+        </div>
+        <div class="field">
+          <label for="weight">Weight (lb)</label>
+          <input type="number" id="weight" name="weight">
+        </div>
+      </div>
+
+      <!-- Goal: a radio group because it's a fixed set of 4 mutually
+           exclusive options, matching the 4 goals x 3 equipment tiers = 12
+           plan templates described in CLAUDE.md. -->
+      <fieldset>
+        <legend>Goal</legend>
+        <label><input type="radio" name="goal" value="build-muscle"> Build muscle</label>
+        <label><input type="radio" name="goal" value="lose-fat"> Lose fat</label>
+        <label><input type="radio" name="goal" value="get-stronger"> Get stronger</label>
+        <label><input type="radio" name="goal" value="general-fitness"> General fitness</label>
+      </fieldset>
+
+      <!-- Equipment access: also a radio group, not a dropdown, because
+           this is the app's key differentiator and should be visible
+           at a glance rather than hidden inside a closed select. -->
+      <fieldset>
+        <legend>Equipment access</legend>
+        <label><input type="radio" name="equipment" value="dorm"> Dorm room (minimal/no equipment)</label>
+        <label><input type="radio" name="equipment" value="rec-center"> Rec center</label>
+        <label><input type="radio" name="equipment" value="full-gym"> Full gym</label>
+      </fieldset>
+
+      <!-- Training days & split: these two are coupled (the split choices
+           that make sense depend on how many days a week you train), but
+           this page has no JavaScript yet, so nothing is filtered here.
+           Each split option is grouped inside a div with a data-days
+           attribute matching the day count it belongs to. That's the hook
+           a future script will use to show/hide the right group based on
+           the "days per week" selection below, without needing to change
+           this HTML at all. -->
+      <fieldset>
+        <legend>Training days &amp; split</legend>
+        <p class="hint">Pick how many days a week you can train, then a split that fits.</p>
+
+        <div class="field">
+          <label for="days">Days per week</label>
+          <select id="days" name="days">
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4">4 days</option>
+            <option value="5">5 days</option>
+            <option value="6">6 days</option>
+          </select>
+        </div>
+
+        <div class="split-options">
+          <div class="split-group" data-days="2">
+            <h3>2-day splits</h3>
+            <label><input type="radio" name="split" value="full-body-2"> Full body</label>
+          </div>
+          <div class="split-group" data-days="3">
+            <h3>3-day splits</h3>
+            <label><input type="radio" name="split" value="full-body-3"> Full body</label>
+            <label><input type="radio" name="split" value="ppl-3"> Push / Pull / Legs</label>
+          </div>
+          <div class="split-group" data-days="4">
+            <h3>4-day splits</h3>
+            <label><input type="radio" name="split" value="upper-lower-4"> Upper / Lower</label>
+            <label><input type="radio" name="split" value="ppl-4"> Push / Pull / Legs</label>
+          </div>
+          <div class="split-group" data-days="5">
+            <h3>5-day splits</h3>
+            <label><input type="radio" name="split" value="ppl-5"> Push / Pull / Legs + extra</label>
+            <label><input type="radio" name="split" value="body-part-5"> Body-part split</label>
+          </div>
+          <div class="split-group" data-days="6">
+            <h3>6-day splits</h3>
+            <label><input type="radio" name="split" value="ppl-6"> Push / Pull / Legs x2</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- No action/method on the form and no click handler here yet --
+           this screen is structure only. Wiring "Continue" to move to
+           account creation is a JavaScript step we'll add later. -->
+      <button type="submit" class="btn-continue">Continue</button>
+    </form>
+  </main>
+</body>
+</html>
