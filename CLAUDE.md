@@ -4,19 +4,19 @@
 A web app (not native mobile) that gives college students a structured workout plan based on their goals and available equipment. Built by a fitness expert who is new to coding — I am learning as we build, so favor clear, simple code over clever code, and explain non-obvious choices in comments or in your responses.
 
 ## Current status
-_Last updated: 2026-09-01_
+_Last updated: 2026-09-01 (onboarding JS interactivity added)_
 - Toolkit is set up (VS Code, terminal basics).
 - `index.html` exists (placeholder "hello world" page, now with proper `<meta charset>`/viewport tags and linked to `styles.css`).
-- `onboarding.html` is built — structure only, no JS. Contains all required fields: name, height, weight, goal (radio group, 4 options), equipment access (radio group: dorm / rec center / full gym), days-per-week (`<select>`, 2–6), and split options grouped by day count (`.split-group[data-days="N"]` divs — every group is currently visible since there's no JS yet to filter them; this is the intended hook for the future filtering step, not a bug).
-- `styles.css` is built — single shared stylesheet, mobile-first, plain CSS (no framework). Styles both `index.html` and `onboarding.html`.
-- Previous note about onboarding work "in progress before this session" turned out to be stale — nothing existed on disk when this session started. Re-verified: no other HTML/CSS/JS files exist beyond the three listed above.
-- No Git repo initialized yet.
-- No JavaScript logic, no data storage, no deployment. Pure HTML/CSS structure so far.
+- `onboarding.html` is built and interactive. Contains all required fields: name, height, weight, goal (radio group, 4 placeholder options — not final, see below), equipment access (radio group: dorm / rec center / full gym), days-per-week (`<select>`, 2–6), and split options grouped by day count (`.split-group[data-days="N"]` divs). `onboarding.js` now filters these groups to show only the one matching the selected day count, and clears a split selection if its group is hidden.
+- `onboarding.js` is built — first JS in the project. Handles split filtering (above) and the Continue button: prevents the default page-reload submit, validates required fields, and shows an inline confirmation/error message (`#onboarding-status` in the HTML, `.status-message` in CSS). On success it `console.log`s the collected answers as a placeholder — no navigation or storage yet, since account-creation.html and localStorage are later steps.
+- Goal handling in the JS is intentionally generic — it reads whichever `goal` radio is checked via `FormData`, with no hardcoded count or list of values, so the placeholder 4 goals can change without touching `onboarding.js`.
+- `styles.css` is built — single shared stylesheet, mobile-first, plain CSS (no framework). Styles `index.html`, `onboarding.html`, and the new status-message states.
+- Git repo initialized and pushed to GitHub (`github.com/bhaynes215/Rana`, remote `origin`, branch `main`).
+- No data storage, no deployment yet.
 
 ### Next steps for onboarding screen specifically
-- Not yet wired: "Continue" button does nothing (no `action`/JS handler) — that's expected at this stage, per roadmap step 4.
-- Not yet wired: rest-days ↔ split filtering. The HTML structure (`data-days` attributes) is ready for this; the actual show/hide logic is JS work, which per the roadmap comes after Git basics (roadmap step 4, not step 2).
-- Goal options were chosen as reasonable placeholders (build muscle, lose fat, get stronger, general fitness) since CLAUDE.md didn't enumerate exact goal labels — confirm these match the 4 goals used in the plan-template matrix before building account creation/plan generation.
+- Goal options are still placeholders (build muscle, lose fat, get stronger, general fitness) since CLAUDE.md didn't enumerate exact goal labels — confirm these match the 4 goals used in the plan-template matrix before building account creation/plan generation. The JS doesn't assume exactly 4, so changing them later is just an HTML edit.
+- Continue currently just validates and shows an inline confirmation — no navigation to account creation and no persistence yet (those are roadmap steps 5+ and require account-creation.html, which doesn't exist yet).
 
 ## Build philosophy for this project
 - We are deliberately going slow and building understanding, not just shipping fast. Prefer vanilla HTML/CSS/JS over frameworks for now — no React, no build tooling — until the fundamentals are solid.
@@ -57,8 +57,8 @@ A training day is a set of movement-pattern slots, compound movements first. Eac
 ## Roadmap (original sequencing — check current status against this before proposing a plan)
 1. Toolkit setup — ✅ done
 2. Build one static screen — ✅ done (onboarding.html + styles.css built 2026-09-01; structure only, no JS)
-3. Git & GitHub basics — not started
-4. Add interactivity (JavaScript)
+3. Git & GitHub basics — ✅ done (repo initialized, pushed to GitHub at bhaynes215/Rana, 2026-09-01)
+4. Add interactivity (JavaScript) — ✅ done (onboarding.js: split filtering + Continue validation, 2026-09-01)
 5. Make the app remember things (localStorage first, real database later)
 6. Deploy (free hosting)
 7. Build the real differentiator: equipment- and time-block-aware programming

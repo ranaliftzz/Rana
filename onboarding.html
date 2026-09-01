@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- This page is structure only right now: no JavaScript, no validation,
-       no navigation. It just lays out the questions. Interactivity comes
-       in a later step. -->
   <main class="onboarding">
     <h1>Let's build your plan</h1>
     <p class="intro">A few questions so we can put together a plan that fits you.</p>
@@ -55,13 +52,10 @@
       </fieldset>
 
       <!-- Training days & split: these two are coupled (the split choices
-           that make sense depend on how many days a week you train), but
-           this page has no JavaScript yet, so nothing is filtered here.
-           Each split option is grouped inside a div with a data-days
-           attribute matching the day count it belongs to. That's the hook
-           a future script will use to show/hide the right group based on
-           the "days per week" selection below, without needing to change
-           this HTML at all. -->
+           that make sense depend on how many days a week you train). Each
+           split option is grouped inside a div with a data-days attribute
+           matching the day count it belongs to; onboarding.js shows only
+           the group matching the current "days per week" selection. -->
       <fieldset>
         <legend>Training days &amp; split</legend>
         <p class="hint">Pick how many days a week you can train, then a split that fits.</p>
@@ -104,11 +98,14 @@
         </div>
       </fieldset>
 
-      <!-- No action/method on the form and no click handler here yet --
-           this screen is structure only. Wiring "Continue" to move to
-           account creation is a JavaScript step we'll add later. -->
       <button type="submit" class="btn-continue">Continue</button>
+
+      <!-- Filled in by onboarding.js: validation errors or the
+           "got it" confirmation once Continue is clicked. -->
+      <p id="onboarding-status" class="status-message" aria-live="polite"></p>
     </form>
   </main>
+
+  <script src="onboarding.js" defer></script>
 </body>
 </html>

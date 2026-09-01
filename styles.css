@@ -146,6 +146,17 @@ fieldset label input[type="radio"] {
   background-color: #285e42;
 }
 
+/* Feedback shown after clicking Continue: success (default) or error */
+.status-message {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #2f6f4f;
+}
+
+.status-message--error {
+  color: #b3261e;
+}
+
 /* ---- Wider screens (small tablets and up) ---- */
 @media (min-width: 600px) {
   .field-row {
