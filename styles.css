@@ -157,6 +157,174 @@ fieldset label input[type="radio"] {
   color: #b3261e;
 }
 
+/* ---- Dashboard ---- */
+
+.dashboard {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-date {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.dashboard-greeting {
+  margin: 4px 0 0;
+}
+
+/* Today's workout card: the focal point of the whole screen, so it gets
+   the most contrast, the most padding, and the largest type on the page. */
+.today-card {
+  background-color: #2f6f4f;
+  color: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.today-eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.today-type {
+  margin: 8px 0 20px;
+  font-size: 2rem;
+}
+
+.today-start {
+  /* Reuses .btn-continue's sizing/weight, just recolored to stand out
+     against the card's own green background. */
+  background-color: #fff;
+  color: #2f6f4f;
+}
+
+.today-start:hover {
+  background-color: #f0f0f0;
+}
+
+/* Rest-day copy is hidden unless the card is explicitly in the rest
+   state, and the training-only button is hidden when it is. */
+.today-rest-note {
+  display: none;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.today-card[data-state="rest"] {
+  /* Muted/neutral treatment — visually distinct from a "go train" card. */
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+.today-card[data-state="rest"] .today-eyebrow {
+  color: #666;
+}
+
+.today-card[data-state="rest"] .today-start {
+  display: none;
+}
+
+.today-card[data-state="rest"] .today-rest-note {
+  display: block;
+}
+
+/* Weekly strip: seven equal-width cells in one row, sized to fit a phone
+   screen without horizontal scrolling. */
+.week-strip {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.week-day {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 2px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.week-day-label {
+  color: #555;
+}
+
+/* Each state gets its own dot via ::after, plus an explicit text marker
+   for "rest" so a rest day never reads as an empty/unscheduled gap. */
+.week-day::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.week-day[data-state="completed"]::after {
+  background-color: #2f6f4f;
+}
+
+.week-day[data-state="upcoming"]::after {
+  background-color: transparent;
+  border: 1.5px solid #2f6f4f;
+}
+
+.week-day[data-state="today"] {
+  background-color: #eaf3ee;
+  outline: 2px solid #2f6f4f;
+}
+
+.week-day[data-state="today"]::after {
+  background-color: #2f6f4f;
+}
+
+.week-day[data-state="rest"] {
+  color: #888;
+}
+
+.week-day[data-state="rest"] .week-day-label {
+  color: #888;
+}
+
+/* Replaces the dot with a small "Rest" word so it reads as an affirmative
+   state, not a missing one. */
+.week-day[data-state="rest"]::after {
+  content: "Rest";
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 0.7rem;
+}
+
+/* Temporary scaffolding for previewing both today-card states without
+   editing code — remove along with dashboard.js's demo-toggle logic once
+   the dashboard reads a real plan. */
+.demo-toggle {
+  align-self: center;
+  background: none;
+  border: 1px dashed #aaa;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: #777;
+  cursor: pointer;
+}
+
 /* ---- Wider screens (small tablets and up) ---- */
 @media (min-width: 600px) {
   .field-row {

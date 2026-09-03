@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Rana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dashboard">
+
+    <!-- a) Header: today's date (filled in by JS) + a greeting -->
+    <header class="dashboard-header">
+      <p id="dashboard-date" class="dashboard-date"></p>
+      <!-- Name is hardcoded for now — it becomes the onboarding "name"
+           answer once answers are actually saved (roadmap step 5). -->
+      <h1 class="dashboard-greeting">Welcome back, Brennan</h1>
+    </header>
+
+    <!-- b) Today's workout card — the visual focal point of the screen.
+         data-state controls which of the two states below is shown; CSS
+         reads this attribute, so flipping it is a one-line change (see the
+         demo toggle at the bottom of this page). -->
+    <section id="today-card" class="today-card" data-state="training">
+      <p class="today-eyebrow">Today</p>
+      <h2 class="today-type">Upper body</h2>
+      <!-- Deliberately minimal: just the day type and a start affordance.
+           No exercise list or movement slots here — that's the workout
+           detail screen, a later, separate build (see CLAUDE.md). -->
+      <button id="today-start" class="today-start btn-continue" type="button">
+        Start workout
+      </button>
+      <!-- Rest-day content, hidden while data-state="training". Shown by CSS
+           when data-state="rest". No button in this branch on purpose: rest
+           days are prescribed and there's no way to train through them. -->
+      <p class="today-rest-note">Rest day — recovery is part of the plan.</p>
+    </section>
+
+    <!-- c) Weekly strip: seven fixed cells, each affirmatively marked with
+         its state so a rest day reads as "rest," never as an empty gap. -->
+    <ul class="week-strip">
+      <li class="week-day" data-state="completed"><span class="week-day-label">Mon</span></li>
+      <li class="week-day" data-state="rest"><span class="week-day-label">Tue</span></li>
+      <li class="week-day" data-state="completed"><span class="week-day-label">Wed</span></li>
+      <li id="week-today" class="week-day" data-state="today"><span class="week-day-label">Thu</span></li>
+      <li class="week-day" data-state="upcoming"><span class="week-day-label">Fri</span></li>
+      <li class="week-day" data-state="upcoming"><span class="week-day-label">Sat</span></li>
+      <li class="week-day" data-state="rest"><span class="week-day-label">Sun</span></li>
+    </ul>
+
+    <!-- Scaffolding only: lets both today-card states be seen without
+         editing code. Delete once the dashboard reads a real plan. -->
+    <button id="demo-toggle" class="demo-toggle" type="button" data-demo-only>
+      Preview rest day
+    </button>
+
+  </main>
+
+  <script src="dashboard.js" defer></script>
+</body>
+</html>

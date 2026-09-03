@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — Rana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    This screen is visually real but functionally fake: there is no
+    authentication service and no backend behind it. Continue only checks
+    that the fields look filled in and email-shaped, then navigates to the
+    dashboard — nothing is sent anywhere, and no account or user record is
+    actually created. This gets upgraded to the real thing once the data
+    layer is built (roadmap step 5+).
+  -->
+  <main class="onboarding">
+    <h1>Create your account</h1>
+    <p class="intro">Your plan is ready — create an account to save it.</p>
+
+    <form>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <!-- type="password" is what masks the characters as you type —
+             that's a built-in browser behavior, not something we write. -->
+        <input type="password" id="password" name="password">
+      </div>
+
+      <button type="submit" class="btn-continue">Continue</button>
+
+      <!-- Filled in by account-creation.js: validation errors only.
+           On success we navigate away, so there's no success message here. -->
+      <p id="account-status" class="status-message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="account-creation.js" defer></script>
+</body>
+</html>

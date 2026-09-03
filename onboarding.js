@@ -71,7 +71,15 @@ form.addEventListener("submit", (event) => {
   };
 
   console.log("Onboarding answers:", answers);
-  showStatus(`Got it, ${name} — next up is account creation.`, false);
+  showStatus(`Got it, ${name} — taking you to account creation.`, false);
+
+  // Move on to the next screen. `window.location.href = "..."` is the plain
+  // JavaScript way to navigate: setting it tells the browser to load that page,
+  // exactly as if the user had clicked a link to it.
+  //
+  // The answers above aren't carried across yet — they're only logged. Passing
+  // them forward (and remembering them) is roadmap step 5, localStorage.
+  window.location.href = "account-creation.html";
 });
 
 function showStatus(message, isError) {
