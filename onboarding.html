@@ -3,109 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Started — Rana</title>
+  <title>Questionnaire — Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="onboarding">
-    <h1>Let's build your plan</h1>
-    <p class="intro">A few questions so we can put together a plan that fits you.</p>
+  <main class="screen onboarding">
+    <div>
+      <p id="q-progress" class="q-progress">Question 1 of 13</p>
+      <div class="q-progress-bar"><div id="q-progress-fill" class="q-progress-bar-fill" style="width: 7.7%"></div></div>
+    </div>
 
-    <form>
-      <!-- Name -->
+    <!--
+      One .q-question div per question. Only the one with the "active"
+      class is visible at a time — see onboarding.js. This is the "one
+      page, JavaScript swaps which question is visible" approach from the
+      PRD, instead of separate pages per question: it keeps in-progress
+      answers in memory automatically (they're just still-present DOM
+      values) and makes the back/forward navigation instant.
+    -->
+
+    <!-- Q1: name -->
+    <div class="q-question active" data-index="0">
+      <h1 class="q-prompt">What should we call you?</h1>
       <div class="field">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="q-name" autocomplete="given-name">
       </div>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+    </div>
 
-      <!-- Height / Weight -->
-      <div class="field-row">
-        <div class="field">
-          <label for="height">Height (in)</label>
-          <input type="number" id="height" name="height">
-        </div>
-        <div class="field">
-          <label for="weight">Weight (lb)</label>
-          <input type="number" id="weight" name="weight">
-        </div>
-      </div>
-
-      <!-- Goal: a radio group because it's a fixed set of 4 mutually
-           exclusive options, matching the 4 goals x 3 equipment tiers = 12
-           plan templates described in CLAUDE.md. -->
+    <!-- Q2: gender -->
+    <div class="q-question" data-index="1">
+      <h1 class="q-prompt">Gender</h1>
       <fieldset>
-        <legend>Goal</legend>
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="prefer-not-to-say"> Prefer not to say</label>
+      </fieldset>
+    </div>
+
+    <!-- Q3: age -->
+    <div class="q-question" data-index="2">
+      <h1 class="q-prompt">Age</h1>
+      <div class="field">
+        <input type="number" id="q-age" min="13" max="100" inputmode="numeric">
+      </div>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+    </div>
+
+    <!-- Q4: height -->
+    <div class="q-question" data-index="3">
+      <h1 class="q-prompt">Height</h1>
+      <div class="field">
+        <label for="q-height">Centimeters</label>
+        <input type="number" id="q-height" min="120" max="230" inputmode="numeric">
+      </div>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+    </div>
+
+    <!-- Q5: current weight -->
+    <div class="q-question" data-index="4">
+      <h1 class="q-prompt">Current weight</h1>
+      <div class="field">
+        <label for="q-weight-current">Pounds</label>
+        <input type="number" id="q-weight-current" min="70" max="500" inputmode="numeric">
+      </div>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+    </div>
+
+    <!-- Q6: target weight (skippable) -->
+    <div class="q-question" data-index="5">
+      <h1 class="q-prompt">Target weight</h1>
+      <div class="field">
+        <label for="q-weight-target">Pounds (optional)</label>
+        <input type="number" id="q-weight-target" min="70" max="500" inputmode="numeric">
+      </div>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+      <button type="button" class="q-skip" data-skip="weight_target">Skip this question</button>
+    </div>
+
+    <!-- Q7: primary goal -->
+    <div class="q-question" data-index="6">
+      <h1 class="q-prompt">Primary goal</h1>
+      <fieldset>
         <label><input type="radio" name="goal" value="build-muscle"> Build muscle</label>
         <label><input type="radio" name="goal" value="lose-fat"> Lose fat</label>
         <label><input type="radio" name="goal" value="get-stronger"> Get stronger</label>
         <label><input type="radio" name="goal" value="general-fitness"> General fitness</label>
       </fieldset>
+    </div>
 
-      <!-- Equipment access: also a radio group, not a dropdown, because
-           this is the app's key differentiator and should be visible
-           at a glance rather than hidden inside a closed select. -->
+    <!-- Q8: focus area -->
+    <div class="q-question" data-index="7">
+      <h1 class="q-prompt">Focus area</h1>
+      <p class="intro">Shown back to you on your results — it doesn't change which split you get, just what we call out.</p>
       <fieldset>
-        <legend>Equipment access</legend>
-        <label><input type="radio" name="equipment" value="dorm"> Dorm room (minimal/no equipment)</label>
-        <label><input type="radio" name="equipment" value="rec-center"> Rec center</label>
-        <label><input type="radio" name="equipment" value="full-gym"> Full gym</label>
+        <label><input type="radio" name="focus_area" value="chest-arms"> Chest &amp; arms</label>
+        <label><input type="radio" name="focus_area" value="back-shoulders"> Back &amp; shoulders</label>
+        <label><input type="radio" name="focus_area" value="legs-glutes"> Legs &amp; glutes</label>
+        <label><input type="radio" name="focus_area" value="balanced"> Balanced</label>
       </fieldset>
+    </div>
 
-      <!-- Training days & split: these two are coupled (the split choices
-           that make sense depend on how many days a week you train). Each
-           split option is grouped inside a div with a data-days attribute
-           matching the day count it belongs to; onboarding.js shows only
-           the group matching the current "days per week" selection. -->
+    <!-- Q9: fitness level -->
+    <div class="q-question" data-index="8">
+      <h1 class="q-prompt">Fitness level</h1>
       <fieldset>
-        <legend>Training days &amp; split</legend>
-        <p class="hint">Pick how many days a week you can train, then a split that fits.</p>
-
-        <div class="field">
-          <label for="days">Days per week</label>
-          <select id="days" name="days">
-            <option value="2">2 days</option>
-            <option value="3">3 days</option>
-            <option value="4">4 days</option>
-            <option value="5">5 days</option>
-            <option value="6">6 days</option>
-          </select>
-        </div>
-
-        <div class="split-options">
-          <div class="split-group" data-days="2">
-            <h3>2-day splits</h3>
-            <label><input type="radio" name="split" value="full-body-2"> Full body</label>
-          </div>
-          <div class="split-group" data-days="3">
-            <h3>3-day splits</h3>
-            <label><input type="radio" name="split" value="full-body-3"> Full body</label>
-            <label><input type="radio" name="split" value="ppl-3"> Push / Pull / Legs</label>
-          </div>
-          <div class="split-group" data-days="4">
-            <h3>4-day splits</h3>
-            <label><input type="radio" name="split" value="upper-lower-4"> Upper / Lower</label>
-            <label><input type="radio" name="split" value="ppl-4"> Push / Pull / Legs</label>
-          </div>
-          <div class="split-group" data-days="5">
-            <h3>5-day splits</h3>
-            <label><input type="radio" name="split" value="ppl-5"> Push / Pull / Legs + extra</label>
-            <label><input type="radio" name="split" value="body-part-5"> Body-part split</label>
-          </div>
-          <div class="split-group" data-days="6">
-            <h3>6-day splits</h3>
-            <label><input type="radio" name="split" value="ppl-6"> Push / Pull / Legs x2</label>
-          </div>
-        </div>
+        <label><input type="radio" name="fitness_level" value="never-trained"> Never trained</label>
+        <label><input type="radio" name="fitness_level" value="returning"> Trained before, returning</label>
+        <label><input type="radio" name="fitness_level" value="consistently"> Training consistently</label>
       </fieldset>
+    </div>
 
-      <button type="submit" class="btn-continue">Continue</button>
+    <!-- Q10: activity level outside the gym -->
+    <div class="q-question" data-index="9">
+      <h1 class="q-prompt">Activity level outside the gym</h1>
+      <fieldset>
+        <label><input type="radio" name="activity_level" value="mostly-sitting"> Mostly sitting</label>
+        <label><input type="radio" name="activity_level" value="moderately-active"> Moderately active</label>
+        <label><input type="radio" name="activity_level" value="on-feet-all-day"> On my feet all day</label>
+      </fieldset>
+    </div>
 
-      <!-- Filled in by onboarding.js: validation errors or the
-           "got it" confirmation once Continue is clicked. -->
-      <p id="onboarding-status" class="status-message" aria-live="polite"></p>
-    </form>
+    <!-- Q11: limitations -->
+    <div class="q-question" data-index="10">
+      <h1 class="q-prompt">Anything we should work around?</h1>
+      <fieldset>
+        <label><input type="checkbox" name="limitations" value="knee"> Knee</label>
+        <label><input type="checkbox" name="limitations" value="shoulder"> Shoulder</label>
+        <label><input type="checkbox" name="limitations" value="lower-back"> Lower back</label>
+        <label><input type="checkbox" name="limitations" value="wrist"> Wrist</label>
+        <label><input type="checkbox" name="limitations" value="none" id="q-limitations-none"> None of these</label>
+      </fieldset>
+      <button type="button" class="btn-continue" data-continue>Continue</button>
+    </div>
+
+    <!-- Q12: training days per week -->
+    <div class="q-question" data-index="11">
+      <h1 class="q-prompt">How many days a week can you train?</h1>
+      <fieldset>
+        <label><input type="radio" name="training_days" value="3"> 3 days</label>
+        <label><input type="radio" name="training_days" value="4"> 4 days</label>
+        <label><input type="radio" name="training_days" value="5"> 5 days</label>
+        <label><input type="radio" name="training_days" value="6"> 6 days</label>
+      </fieldset>
+    </div>
+
+    <!-- Q13: which days -->
+    <div class="q-question" data-index="12">
+      <h1 class="q-prompt">Which days?</h1>
+      <p id="q-weekdays-hint" class="intro">Pick the days you chose above.</p>
+      <fieldset>
+        <label><input type="checkbox" name="training_weekdays" value="Mon"> Monday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Tue"> Tuesday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Wed"> Wednesday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Thu"> Thursday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Fri"> Friday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Sat"> Saturday</label>
+        <label><input type="checkbox" name="training_weekdays" value="Sun"> Sunday</label>
+      </fieldset>
+      <button type="button" class="btn-continue" data-continue>Build my plan</button>
+    </div>
+
+    <button type="button" id="q-back" class="btn-secondary" hidden>Back</button>
+    <p id="onboarding-status" class="status-message" aria-live="polite"></p>
   </main>
 
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="plan.js" defer></script>
   <script src="onboarding.js" defer></script>
 </body>
 </html>

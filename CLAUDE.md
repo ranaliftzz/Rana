@@ -6,7 +6,32 @@
 A web app (not native mobile) that gives college students a structured workout plan based on their goals and available equipment. Built by a fitness expert who is new to coding — I am learning as we build, so favor clear, simple code over clever code, and explain non-obvious choices in comments or in your responses.
 
 ## Current status
-_Last updated: 2026-09-03 (onboarding → account creation → dashboard wired up)_
+_Last updated: 2026-09-11 (v1 MVP built end-to-end: questionnaire → results → account creation → dashboard → session detail → active session → session complete, all wired to real localStorage data)_
+
+**The whole PRD build order (§3) is done as a first pass** — every screen in the v1 flow exists, is wired to real data, and has been driven end-to-end in a real headless browser (Playwright) with zero console errors: 13-question questionnaire → results/projection with stat bars and a reveal animation → account creation → dashboard reading a real assigned plan → session detail → active session with logging and exercise swap → session complete with XP/stat/tier-up. Three real bugs were caught and fixed only by actually running it (not just reading the code) — see "Bugs found by testing, not reading" below. **This is a first pass, not a polished/reviewed release** — see "Needs your review before this is trustworthy" below for what's still a placeholder judgment call rather than a confirmed decision.
+
+New shared modules (no build tooling, plain `<script>` tags, everything hangs off a `window.Rana` namespace): `data.js` (fetches/caches `data/*.json`), `storage.js` (the one file that touches `localStorage`), `plan.js` (split-matching + the fixed weekday→workout schedule), `game.js` (stat/XP/tier/calorie math). `styles.css` was fully rewritten to the PRD's dark "system HUD" visual system (§10) — every screen now uses it, not just new ones.
+
+### Bugs found by testing, not reading
+All three were invisible from reading the source — they only showed up once the app actually ran:
+1. `index.html`'s inline redirect script ran before its `defer`red `storage.js` had executed (`defer` only orders *deferred* scripts against each other, not against a following inline script) — threw "Rana is not defined" on every load. Fixed by removing `defer` from that one script tag.
+2. Every exercise object's name field is `exercise_name` (matches `data/exercises.json`'s actual schema), but `session-detail.js` and `active-session.js` read `.name` — every exercise on those two screens rendered as "undefined". Fixed all three call sites.
+3. `.set-row`'s CSS grid let a number input's intrinsic content width push its `1fr` track wider than it had room for (grid items default to `min-width: auto`) — the row silently overflowed the phone-width viewport and the "Log" button rendered off-screen, unclickable. Fixed with `min-width: 0` on the inputs.
+
+A fourth issue was a logic bug, not a wiring bug: `Rana.plan.getSessionForDate` marked every training weekday earlier in the current calendar week as "missed" on a brand-new plan, even days before the plan's own `start_date` — a first-time user would open the dashboard and immediately see red "missed" marks for workouts that were never scheduled. Fixed by checking `dateStr < plan.start_date` and introducing a neutral `not-started` week-strip state instead.
+
+### Needs your review before this is trustworthy
+Flagging these explicitly rather than letting them look finished:
+- **The 43 new exercise-library entries** (`scripts/build_library.py`'s `NEW_ENTRIES`) are drafted with standard exercise-science classifications, not reviewed by you.
+- **`data/quotes.json`'s wording** is drafted from memory, not checked against the actual George Long (1862) / Long-Higginson public-domain texts — verify before shipping, since the PRD's whole reason for specifying those translators is copyright safety.
+- **`game.js`'s baseline-stat, projected-stat, and calorie/macro formulas are first-pass inventions**, not from the PRD (it describes what they should depend on, not the math). Marked with comments in the file. The XP/level/tier formulas ARE from the PRD (§7.3) and should be exact.
+- **PRD open question §13.2 (focus area) was resolved as "advisory only"** — `plan.js`'s split matcher doesn't use `focus_area` at all, it's just saved to the profile and could be surfaced in copy later. The other 3 PRD open questions (§13.1, §13.3, §13.4) are still genuinely open — see "Open questions" below.
+- **Split matching uses all 7 real splits from the workbook**, scored by goal + days/week + experience level, not the PRD's literal "4 goal templates" — see the comment at the top of `plan.js` for why.
+- **Height is collected in centimeters only** — the PRD's ft/in-or-cm option wasn't built, kept it to one unit for a first pass.
+- **Session detail / active session only work for *today's* date** — no browsing/logging past or future sessions yet, intentionally, to keep the first pass scoped.
+- **No "add an extra set" beyond what's prescribed**, and finishing a session doesn't require all prescribed sets to be logged (lenient on purpose for a first pass).
+
+_Superseded below — kept for history:_
 - Toolkit is set up (VS Code, terminal basics).
 - `index.html` exists (placeholder "hello world" page, now with proper `<meta charset>`/viewport tags and linked to `styles.css`).
 - Three screens now exist and are connected in one direction: `onboarding.html` → `account-creation.html` → `dashboard.html`, navigated with plain `window.location.href` (no framework router). There is no back navigation from the dashboard — this flow is one-directional for now.
@@ -22,15 +47,12 @@ _Last updated: 2026-09-03 (onboarding → account creation → dashboard wired u
 - **2026-09-11: Exercise library repair done (PRD §4).** `scripts/build_library.py` reads `workout-data/workout_splits_database.xlsx`, merges the original 56 `exercise_library` rows with 43 newly authored entries and 8 confirmed alias resolutions (naming drift, e.g. "Hack Squat" → the existing `hack_squat` entry — not new exercises), and exports `data/exercises.json` (99 keyed entries), `data/splits.json`, `data/workouts.json`, and `data/slots.json` (193 slots / 579 slot_options — each old `exercises_master` row became one slot with its primary + 2 alternatives as ranked `slot_option`s). `scripts/validate_library.py` is the standalone, dependency-free check the PRD asked for — it confirms every `slot_option.exercise_key` resolves against `exercises.json` and fails loudly (non-zero exit, lists every dangling reference) otherwise; not yet wired into a pre-commit hook or CI, just runnable on demand. **The 43 new entries are a first draft** — drafted with standard exercise-science classifications matching the existing library's voice, but not yet reviewed by the fitness expert (see `scripts/build_library.py`'s `NEW_ENTRIES`, or `data/exercises.json`).
 
 ### Next pass
-The PRD's build order (§3) is now the plan, replacing the old roadmap steps 5–7. Library repair (above) is done — next:
-1. **Storage layer** — `storage.js` on `localStorage`, one module, no screen touches `localStorage` directly. Comes before any screen work; onboarding currently discards its answers.
-2. Questionnaire rebuild (one-question-per-screen).
-3. Results/projection screen (new — the emotional centerpiece).
-4. Dashboard rebuild against real plan data.
-5. Session detail screen (new).
-6. Active session / logging screen (new).
-7. Session complete screen (new — carries the level-up moment).
-8. Account creation restyle (stays functionally inert).
+The PRD's build order (§3) — library repair through account creation restyle — is done as a first pass (see "Current status" above). What's actually next:
+1. **Fitness-expert review pass** — work through "Needs your review before this is trustworthy" above, especially the 43 new library entries and the invented baseline/projection/calorie formulas.
+2. **Resolve the remaining 3 PRD open questions** (§13.1 under-18, §13.3 calibration/INT, §13.4 session length) — see "Open questions" below.
+3. **Expand session detail/active session beyond "today only"** if browsing/logging other dates turns out to matter for real use.
+4. Deploy (free hosting) — still not done, no live URL yet.
+5. Migrate storage off `localStorage` to a real database (Supabase, per the PRD) once the data model has been used for real and any schema gaps show up.
 
 ## Locked design decisions
 These were deliberate calls made while building the onboarding → account creation → dashboard flow — don't revisit them without a reason.
@@ -80,13 +102,14 @@ A training day is a set of movement-pattern slots, compound movements first. Eac
 **Visual design (new in v1, PRD §10):** A dark "system HUD" identity — deep black/neon cyan, Chakra Petch for display type, zero border-radius (notched panels via `clip-path` instead), segmented (not gradient) stat bars, glow via `box-shadow` never blur. Full token list and rationale in PRD §10 — read it before styling new screens rather than guessing at the palette.
 
 ## Screens (in build order per PRD §3)
-1. **Questionnaire** — currently built as a single scrolling form (`onboarding.html`); being rebuilt as one-question-per-screen (PRD §8): progress indicator, back navigation that preserves answers, browser back steps back one question (`history.pushState` per question), single-choice questions auto-advance, text/number entry needs explicit continue, validation per question not at the end.
-2. **Results / projection** — does not exist yet; new in the PRD, and the emotional centerpiece (§9): a sequenced reveal (current vs. projected stats, plan assignment, calorie/macro display) ending in "are you ready to lock in."
-3. **Account creation** — ✅ built, intentionally non-functional (see Current status). PRD target: restyle only, stays inert.
-4. **Dashboard (home)** — ✅ built, placeholder-level with hardcoded data; PRD target: rebuild against real plan data.
-5. **Session detail** — does not exist yet; list of movement-pattern slots for that day, with set counts (what the dashboard's Start button leads to).
-6. **Active session / logging** — does not exist yet; actual set logging with weights/reps and exercise swapping (what starting a session from detail leads to).
-7. **Session complete** — does not exist yet; carries the level-up moment (stat/XP movement shown here).
+All seven exist and are wired together with real data — ✅ done as a first pass, all still wanting the review pass described in "Current status" above.
+1. **Questionnaire** (`onboarding.html`/`onboarding.js`) — ✅ one-question-per-screen (PRD §8): progress indicator, back navigation via `history.pushState` per question, single-choice auto-advance, text/number needs explicit Continue, per-question validation.
+2. **Results / projection** (`results.html`/`results.js`) — ✅ sequenced reveal (current vs. projected stat bars, plan assignment, calorie/macro display), skippable on tap, respects `prefers-reduced-motion`, ends in the lock-in button that sets `plan.start_date`.
+3. **Account creation** (`account-creation.html`/`account-creation.js`) — ✅ restyled to the dark HUD system, logic unchanged and still intentionally inert (see original note below).
+4. **Dashboard (home)** (`dashboard.html`/`dashboard.js`) — ✅ rebuilt against real stored plan/session data; demo toggle removed. Adds a small HUD header (name, tier, level) above the still-minimal today card.
+5. **Session detail** (`session-detail.html`/`session-detail.js`) — ✅ browse-only list of a day's movement-pattern slots with prescription and set counts; deliberately no swap control here (that's active session's job) per locked decision #3.
+6. **Active session / logging** (`active-session.html`/`active-session.js`) — ✅ per-set weight/reps logging plus exercise swapping, writes `logged_set` records immediately as each set is logged.
+7. **Session complete** (`session-complete.html`/`session-complete.js`) — ✅ shows XP gained and stat deltas for the session, a level-up or tier-up modal when crossed, and the one-tap difficulty rating already captured at the end of active session.
 
 ## Roadmap (check current status against this before proposing a plan)
 1. Toolkit setup — ✅ done
@@ -94,15 +117,15 @@ A training day is a set of movement-pattern slots, compound movements first. Eac
 3. Git & GitHub basics — ✅ done (repo initialized, pushed to GitHub at bhaynes215/Rana, 2026-09-01)
 4. Add interactivity (JavaScript) — ✅ done (onboarding.js: split filtering + Continue validation, 2026-09-01); extended 2026-09-03 with account-creation.js (validation) and dashboard.js (date + demo toggle), plus forward navigation wiring all three screens together
 
-**Steps 5–7 below are superseded by the PRD's build order (§3), approved 2026-09-11 — see "Next pass" above for the current sequence:**
-5. ~~Exercise library repair~~ ✅ done (2026-09-11) → storage layer (`localStorage`) → questionnaire rebuild → results screen → dashboard rebuild → session detail → active session → session complete → account creation restyle
-6. Later: deploy (free hosting), migrate storage to Supabase, equipment access returns as a profile setting (not onboarding), Google Calendar
+**Steps 5–7 below are superseded by the PRD's build order (§3) — see "Next pass" above for what's actually left:**
+5. ~~Exercise library repair~~ ✅ → ~~storage layer~~ ✅ → ~~questionnaire rebuild~~ ✅ → ~~results screen~~ ✅ → ~~dashboard rebuild~~ ✅ → ~~session detail~~ ✅ → ~~active session~~ ✅ → ~~session complete~~ ✅ → ~~account creation restyle~~ ✅ — all done 2026-09-11
+6. Later: fitness-expert review pass, deploy (free hosting), migrate storage to Supabase, equipment access returns as a profile setting (not onboarding), Google Calendar
 
-## Open questions (PRD §13 — unresolved, don't guess at answers)
-1. **Under-18 users** — in scope or gated out? Affects the calorie display and account-screen obligations. Needs an answer before the results screen is considered done.
-2. **Focus area's actual function** (§8 Q8) — selects A/B split variants, or advisory-only? See "Product scope — v1" above.
-3. **Calibration graduation and INT** — confirm the per-movement-pattern graduation mechanic stays in v1, since it's the only thing that makes INT move early.
-4. **Session length** — not currently asked, but splits run 60–85 minutes and 85 minutes is a hard sell between classes. Worth a 14th question, or accept that goal selection implies it.
+## Open questions (PRD §13)
+1. **Under-18 users** — still genuinely open. Age is captured and stored but nothing branches on it yet, per the PRD's own instruction to leave this until it's answered.
+2. ~~Focus area's actual function~~ — **resolved 2026-09-11: advisory only.** Saved to the profile, not used by the split matcher. See "Needs your review" in Current status — this was a build-time call, not a discussion with you, so revisit if you'd rather it drove A/B split variant selection.
+3. **Calibration graduation and INT** — still open. The game layer computes INT from adherence generally; the specific "graduates per movement pattern after ~3 logged sessions" mechanic from `CLAUDE.md`'s original calibration section isn't implemented as a distinct gate yet.
+4. **Session length** — still open, not asked as a 14th question.
 
 ## How to work with me
 - I'm the fitness expert, not the engineer — defer to me on training/programming questions, but push back if a technical choice I suggest would cause real problems (e.g. data modeling issues, security, unmaintainable structure).

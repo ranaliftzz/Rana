@@ -3,10 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Fitness App</title>
+  <title>Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hello, this is my fitness app!</h1>
+  <!--
+    Real entry point now: sends returning users straight to the dashboard,
+    and everyone else to the questionnaire. This used to be a static
+    "hello world" placeholder (see CLAUDE.md) — now that storage.js exists,
+    it can actually tell the two cases apart.
+  -->
+  <main class="screen" style="align-items: center; text-align: center; justify-content: center; min-height: 60vh;">
+    <p class="system-label">[ SYSTEM ]</p>
+    <h1>Rana</h1>
+  </main>
+
+  <!--
+    No `defer` here: this file's inline script below needs Rana.storage to
+    already exist. `defer` only guarantees order relative to OTHER deferred
+    scripts and DOMContentLoaded — a plain inline script right after it
+    would otherwise run first and hit "Rana is not defined" (hit this for
+    real while testing).
+  -->
+  <script src="storage.js"></script>
+  <script>
+    const profile = Rana.storage.getProfile();
+    const plan = Rana.storage.getPlan();
+    if (profile && plan && plan.status === "active") {
+      window.location.href = "dashboard.html";
+    } else if (profile && plan) {
+      window.location.href = "results.html";
+    } else {
+      window.location.href = "onboarding.html";
+    }
+  </script>
 </body>
 </html>

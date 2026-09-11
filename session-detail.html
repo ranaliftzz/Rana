@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Detail — Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    Browsing what's planned for a day. This screen never logs anything —
+    committing to log sets is a separate screen (active-session.html),
+    reached only via "Begin session" below (locked design decision #3).
+  -->
+  <main class="screen">
+    <div>
+      <a href="dashboard.html" class="btn-secondary" style="display:inline-block; width:auto; padding: 8px 12px;">&larr; Dashboard</a>
+    </div>
+    <div>
+      <p id="session-date" class="today-eyebrow"></p>
+      <h1 id="session-title" class="hud-name"></h1>
+    </div>
+
+    <div id="slot-list"></div>
+
+    <button id="begin-btn" type="button" class="btn-continue" hidden>Begin session</button>
+    <p id="session-note" class="intro"></p>
+  </main>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="plan.js" defer></script>
+  <script src="session-detail.js" defer></script>
+</body>
+</html>

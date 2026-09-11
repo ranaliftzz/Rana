@@ -1,88 +1,234 @@
-// Onboarding screen interactivity.
-// Loaded with the `defer` attribute, which means: wait until the HTML has
-// been fully parsed (so every element below already exists), then run this
-// script — but don't block the page from rendering while the file downloads.
+// Questionnaire interactivity (PRD section 8).
+// One page, thirteen .q-question divs; only one has the "active" class at
+// a time. Because nothing is ever removed from the DOM — just hidden — the
+// browser's own form state (what's typed, what's checked) IS the answer
+// state. There's no separate JS object mirroring it, so there's nothing to
+// keep in sync when the user goes back and changes an earlier answer.
 
-const daysSelect = document.getElementById("days");
-const splitGroups = document.querySelectorAll(".split-group");
-const form = document.querySelector("form");
+const TOTAL_QUESTIONS = 13;
+const questionEls = Array.from(document.querySelectorAll(".q-question"));
+const progressText = document.getElementById("q-progress");
+const progressFill = document.getElementById("q-progress-fill");
+const backBtn = document.getElementById("q-back");
 const statusEl = document.getElementById("onboarding-status");
 
-// --- 1. Rest-days <-> split filtering ---
-// Show only the split options that match the selected day count, hide the
-// rest. Each .split-group has a data-days attribute (set in the HTML) that
-// we compare against the <select>'s current value.
-function applyDaysFilter() {
-  const selectedDays = daysSelect.value;
+let currentIndex = 0;
 
-  splitGroups.forEach((group) => {
-    const matches = group.dataset.days === selectedDays;
-    group.hidden = !matches;
-
-    // If a group is being hidden and it has a checked split radio inside
-    // it, uncheck it. Otherwise that split stays "selected" even though
-    // it's invisible and no longer matches the chosen day count.
-    if (!matches) {
-      const checkedRadio = group.querySelector('input[name="split"]:checked');
-      if (checkedRadio) {
-        checkedRadio.checked = false;
-      }
-    }
+function showQuestion(index) {
+  currentIndex = index;
+  questionEls.forEach((el) => {
+    el.classList.toggle("active", Number(el.dataset.index) === index);
   });
+  progressText.textContent = `Question ${index + 1} of ${TOTAL_QUESTIONS}`;
+  progressFill.style.width = `${((index + 1) / TOTAL_QUESTIONS) * 100}%`;
+  backBtn.hidden = index === 0;
+  clearStatus();
+  if (index === 12) refreshWeekdaysHint();
+
+  const firstInput = questionEls[index].querySelector("input");
+  if (firstInput) firstInput.focus();
 }
 
-applyDaysFilter();
-daysSelect.addEventListener("change", applyDaysFilter);
+function goTo(index) {
+  history.pushState({ index }, "", `#q${index + 1}`);
+  showQuestion(index);
+}
 
-// --- 2. Continue button ---
-form.addEventListener("submit", (event) => {
-  // A form submit normally reloads the page (or navigates to whatever the
-  // form's `action` points to). There's no backend or next screen to send
-  // this to yet, so we stop that default behavior and handle everything
-  // ourselves below.
-  event.preventDefault();
-
-  // FormData reads every named field out of the form for us — including
-  // whichever radio button in a group is currently checked — without us
-  // having to look up each input by hand.
-  const formData = new FormData(form);
-
-  const name = formData.get("name").trim();
-  const goal = formData.get("goal");
-  const equipment = formData.get("equipment");
-  const split = formData.get("split");
-
-  // Minimal validation: just check that something was picked. This doesn't
-  // hardcode which goal, equipment, or split values are valid — it works
-  // the same regardless of how many options each group ends up having.
-  if (!name || !goal || !equipment || !split) {
-    showStatus("Please fill in your name and make a selection for goal, equipment, and split.", true);
-    return;
-  }
-
-  const answers = {
-    name,
-    height: formData.get("height"),
-    weight: formData.get("weight"),
-    goal,
-    equipment,
-    days: formData.get("days"),
-    split,
-  };
-
-  console.log("Onboarding answers:", answers);
-  showStatus(`Got it, ${name} — taking you to account creation.`, false);
-
-  // Move on to the next screen. `window.location.href = "..."` is the plain
-  // JavaScript way to navigate: setting it tells the browser to load that page,
-  // exactly as if the user had clicked a link to it.
-  //
-  // The answers above aren't carried across yet — they're only logged. Passing
-  // them forward (and remembering them) is roadmap step 5, localStorage.
-  window.location.href = "account-creation.html";
+// Browser back button steps back one question instead of leaving the page,
+// because every question push a history entry (see goTo above) — going
+// back just pops to the previous one.
+window.addEventListener("popstate", (event) => {
+  showQuestion(event.state ? event.state.index : 0);
 });
 
-function showStatus(message, isError) {
+history.replaceState({ index: 0 }, "", "#q1");
+showQuestion(0);
+
+backBtn.addEventListener("click", () => history.back());
+
+function showError(message) {
   statusEl.textContent = message;
-  statusEl.classList.toggle("status-message--error", isError);
+  statusEl.classList.add("status-message--error");
+}
+
+function clearStatus() {
+  statusEl.textContent = "";
+  statusEl.classList.remove("status-message--error");
+}
+
+// --- Validation happens per question, right when the user tries to leave it ---
+function validate(index) {
+  switch (index) {
+    case 0:
+      return document.getElementById("q-name").value.trim()
+        ? null : "Let us know what to call you.";
+    case 1:
+      return document.querySelector('input[name="gender"]:checked')
+        ? null : "Pick one.";
+    case 2: {
+      const v = Number(document.getElementById("q-age").value);
+      return v >= 13 && v <= 100 ? null : "Enter an age between 13 and 100.";
+    }
+    case 3:
+      return document.getElementById("q-height").value
+        ? null : "Enter your height.";
+    case 4:
+      return document.getElementById("q-weight-current").value
+        ? null : "Enter your current weight.";
+    case 5:
+      return null; // skippable — see the Skip button, not required here
+    case 6:
+      return document.querySelector('input[name="goal"]:checked')
+        ? null : "Pick one.";
+    case 7:
+      return document.querySelector('input[name="focus_area"]:checked')
+        ? null : "Pick one.";
+    case 8:
+      return document.querySelector('input[name="fitness_level"]:checked')
+        ? null : "Pick one.";
+    case 9:
+      return document.querySelector('input[name="activity_level"]:checked')
+        ? null : "Pick one.";
+    case 10:
+      return document.querySelectorAll('input[name="limitations"]:checked').length > 0
+        ? null : 'Pick at least one, or "None of these."';
+    case 11:
+      return document.querySelector('input[name="training_days"]:checked')
+        ? null : "Pick one.";
+    case 12: {
+      const wanted = Number(document.querySelector('input[name="training_days"]:checked').value);
+      const picked = document.querySelectorAll('input[name="training_weekdays"]:checked').length;
+      return picked === wanted
+        ? null
+        : `Select exactly ${wanted} day${wanted === 1 ? "" : "s"} — you picked ${picked}.`;
+    }
+    default:
+      return null;
+  }
+}
+
+function tryAdvance(index) {
+  const error = validate(index);
+  if (error) {
+    showError(error);
+    return;
+  }
+  if (index === TOTAL_QUESTIONS - 1) {
+    finish();
+    return;
+  }
+  goTo(index + 1);
+}
+
+document.querySelectorAll("[data-continue]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    tryAdvance(Number(btn.closest(".q-question").dataset.index));
+  });
+});
+
+document.querySelectorAll("[data-skip]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    goTo(Number(btn.closest(".q-question").dataset.index) + 1);
+  });
+});
+
+// Text/number questions need an explicit Continue per the PRD, but Enter
+// should do the same thing as clicking it — that's just a convenience, not
+// a second way to advance.
+document.querySelectorAll('.q-question input[type="text"], .q-question input[type="number"]')
+  .forEach((input) => {
+    input.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      event.preventDefault();
+      const btn = input.closest(".q-question").querySelector("[data-continue]");
+      if (btn) btn.click();
+    });
+  });
+
+// Single-choice questions advance automatically after a short beat, so the
+// user doesn't have to also tap Continue for a decision they've already made.
+const AUTO_ADVANCE_GROUPS = [
+  "gender", "goal", "focus_area", "fitness_level", "activity_level", "training_days",
+];
+AUTO_ADVANCE_GROUPS.forEach((name) => {
+  document.querySelectorAll(`input[name="${name}"]`).forEach((radio) => {
+    radio.addEventListener("change", () => {
+      const index = Number(radio.closest(".q-question").dataset.index);
+      setTimeout(() => tryAdvance(index), 350);
+    });
+  });
+});
+
+// "None of these" is mutually exclusive with every other limitation.
+const limitationCheckboxes = document.querySelectorAll('input[name="limitations"]');
+const noneCheckbox = document.getElementById("q-limitations-none");
+limitationCheckboxes.forEach((cb) => {
+  cb.addEventListener("change", () => {
+    if (!cb.checked) return;
+    if (cb === noneCheckbox) {
+      limitationCheckboxes.forEach((other) => {
+        if (other !== noneCheckbox) other.checked = false;
+      });
+    } else {
+      noneCheckbox.checked = false;
+    }
+  });
+});
+
+// Which-days question's count is locked to whatever day count was picked
+// two questions earlier — the hint text is refreshed each time this
+// question becomes active (see showQuestion above) in case the user went
+// back and changed it.
+function refreshWeekdaysHint() {
+  const selected = document.querySelector('input[name="training_days"]:checked');
+  const hint = document.getElementById("q-weekdays-hint");
+  if (selected) {
+    hint.textContent = `Pick exactly ${selected.value} days.`;
+  }
+}
+
+// --- Done: build the profile, match a split, save both, move on ---
+async function finish() {
+  clearStatus();
+  statusEl.textContent = "Building your plan…";
+
+  const profile = {
+    name: document.getElementById("q-name").value.trim(),
+    gender: document.querySelector('input[name="gender"]:checked').value,
+    age: document.getElementById("q-age").value,
+    height: document.getElementById("q-height").value,
+    weight_current: document.getElementById("q-weight-current").value,
+    weight_target: document.getElementById("q-weight-target").value || null,
+    goal: document.querySelector('input[name="goal"]:checked').value,
+    focus_area: document.querySelector('input[name="focus_area"]:checked').value,
+    fitness_level: document.querySelector('input[name="fitness_level"]:checked').value,
+    activity_level: document.querySelector('input[name="activity_level"]:checked').value,
+    limitations: Array.from(document.querySelectorAll('input[name="limitations"]:checked')).map((cb) => cb.value),
+    training_days_per_week: document.querySelector('input[name="training_days"]:checked').value,
+    training_weekdays: Array.from(document.querySelectorAll('input[name="training_weekdays"]:checked')).map((cb) => cb.value),
+    created_at: new Date().toISOString(),
+  };
+
+  try {
+    const data = await Rana.data.load();
+    const splitId = Rana.plan.matchSplit(profile, data.splits);
+    const splitWorkouts = data.workoutsBySplit.get(splitId) || [];
+    const weekdayMap = Rana.plan.buildWeekdayMap(splitWorkouts, profile.training_weekdays);
+
+    const plan = {
+      split_id: splitId,
+      training_weekdays: profile.training_weekdays,
+      weekday_map: weekdayMap,
+      start_date: null, // set on the results screen, when the user locks in
+      status: "draft",
+    };
+
+    Rana.storage.saveProfile(profile);
+    Rana.storage.savePlan(plan);
+
+    window.location.href = "results.html";
+  } catch (err) {
+    console.error(err);
+    showError("Couldn't build your plan — if you opened this file directly, run a local server first (see CLAUDE.md).");
+  }
 }

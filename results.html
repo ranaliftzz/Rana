@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Analysis — Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    Tap anywhere to skip the reveal animation straight to the final state —
+    also what happens automatically if prefers-reduced-motion is set (PRD
+    section 10.6). See results.js.
+  -->
+  <main class="screen" id="results-screen">
+    <p class="system-label reveal-step" data-step="0">[ SYSTEM ]</p>
+    <h1 class="system-heading reveal-step" data-step="0">ANALYSIS COMPLETE</h1>
+
+    <div class="quote-panel reveal-step" data-step="1">
+      <span id="quote-text"></span>
+      <span id="quote-attribution" class="quote-attribution"></span>
+    </div>
+
+    <div class="reveal-step" data-step="2">
+      <div class="stat-compare">
+        <span>Current</span>
+        <span class="stat-compare-arrow">&rarr;</span>
+        <span>Projected (12 wks)</span>
+      </div>
+      <div id="stat-blocks"></div>
+    </div>
+
+    <div class="panel plan-assignment reveal-step" data-step="3">
+      <p id="plan-assignment-name" class="today-eyebrow"></p>
+      <p id="plan-assignment-days" class="plan-assignment-days"></p>
+    </div>
+
+    <div class="nutrition-projection reveal-step" data-step="3">
+      <p>Daily intake target <span id="nutrition-calories" class="num"></span> kcal</p>
+      <p id="nutrition-macros"></p>
+      <p>Water <span class="num">10</span> cups</p>
+    </div>
+
+    <p class="intro reveal-step" data-step="3" style="font-size: 0.8rem;">
+      Projections assume full adherence to the plan and aren't medical advice — check with a doctor before starting a new training or nutrition program, especially with any existing condition.
+    </p>
+
+    <button id="lock-in-btn" type="button" class="btn-continue reveal-step" data-step="4">
+      ARE YOU READY TO LOCK IN?
+    </button>
+  </main>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="plan.js" defer></script>
+  <script src="game.js" defer></script>
+  <script src="results.js" defer></script>
+</body>
+</html>

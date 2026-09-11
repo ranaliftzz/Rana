@@ -1,41 +1,112 @@
 /*
-  Mobile-first CSS: the styles below apply to small screens (phones)
-  by default. The @media block near the bottom only kicks in on
-  wider screens (600px and up), where we add a few layout tweaks.
-  We build "up" from phone to desktop because most students will
-  use this app on a phone first.
+  Rana — visual system (PRD rana-prd-v1-910, section 10).
+  Dark "system HUD" identity: deep black, neon cyan, sharp angular panels,
+  zero border-radius (notched corners via clip-path instead), segmented
+  stat bars, tabular numerals on every numeric readout.
+
+  Still mobile-first: base styles target phones, the @media block near the
+  bottom adds layout tweaks for wider screens.
+
+  Fonts: Chakra Petch (display/HUD) and Inter (body/data) are loaded via
+  <link> tags in each HTML file's <head> — see PRD section 10.3.
 */
 
 * {
   box-sizing: border-box;
 }
 
+:root {
+  --void: #04070b;
+  --panel: #0a1119;
+  --panel-raised: #101b26;
+  --system-cyan: #3fe9ff;
+  --system-blue: #1b7fff;
+  --tier-violet: #a46bff;
+  --text: #e6f4fa;
+  --text-dim: #6f8598;
+  --vitality: #4ade80;
+  --breach: #ff4d5e;
+
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --notch: 12px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
-  color: #1a1a1a;
-  background-color: #fafafa;
+  color: var(--text);
+  background-color: var(--void);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
 }
 
 h1 {
   font-size: 1.5rem;
 }
 
-/* ---- Onboarding page layout ---- */
+a {
+  color: var(--system-cyan);
+}
 
-.onboarding {
+/* Numeric readouts (stats, weights, reps, calories) must keep their digits
+   aligned when the value changes — that's a functional requirement, not
+   decoration, so it's scoped to this class rather than applied globally. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* A notched panel: the app's one signature shape. Zero border-radius
+   everywhere; this clip-path is the replacement. */
+.panel {
+  background-color: var(--panel);
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  clip-path: polygon(
+    var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)),
+    calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch)
+  );
+  padding: 20px;
+}
+
+.panel--raised {
+  background-color: var(--panel-raised);
+}
+
+/* Focus/active state: the cyan glow doubles as the focus ring everywhere. */
+.panel:focus-within,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  border-color: rgba(63, 233, 255, 0.6);
+  box-shadow: 0 0 0 2px var(--void), 0 0 12px rgba(63, 233, 255, 0.6);
+  outline: none;
+}
+
+/* ---- Page shell (shared by every screen) ---- */
+
+.screen {
   max-width: 480px;
   margin: 0 auto;
   padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .intro {
-  color: #555;
+  color: var(--text-dim);
   margin-top: 0;
 }
+
+/* ---- Forms (questionnaire, account creation) ---- */
 
 form {
   display: flex;
@@ -43,7 +114,6 @@ form {
   gap: 24px;
 }
 
-/* A single labeled input (name, height, weight, days) */
 .field {
   display: flex;
   flex-direction: column;
@@ -53,18 +123,20 @@ form {
 .field label {
   font-weight: 600;
   font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
 .field input,
 .field select {
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
+  font-family: var(--font-body);
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  border-radius: 0;
+  background-color: var(--panel-raised);
+  color: var(--text);
 }
 
-/* Height + weight side by side on wider screens, stacked on phones */
 .field-row {
   display: flex;
   flex-direction: column;
@@ -75,115 +147,141 @@ form {
   flex: 1;
 }
 
-/* Groups of related questions (goal, equipment, days & split) */
 fieldset {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  border-radius: 0;
   padding: 16px;
   margin: 0;
 }
 
 legend {
+  font-family: var(--font-display);
   font-weight: 700;
   padding: 0 4px;
+  color: var(--text);
 }
 
 fieldset .hint {
   margin-top: 0;
-  color: #555;
+  color: var(--text-dim);
   font-size: 0.9rem;
 }
 
-/* Radio options: comfortable spacing and tap-target size for touch */
 fieldset label:not(.field label) {
   display: block;
-  padding: 10px 4px;
+  padding: 12px 8px;
   font-size: 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
 
-fieldset label input[type="radio"] {
-  margin-right: 8px;
-  transform: scale(1.1);
+fieldset label:not(.field label):hover {
+  border-color: rgba(63, 233, 255, 0.25);
 }
 
-/* Each day-count's split options, visually grouped so the day/split
-   relationship is clear even before any JS filtering exists */
-.split-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.split-group {
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
-  padding: 8px 12px;
-  background-color: #f5f5f5;
-}
-
-.split-group h3 {
-  margin: 4px 0;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #666;
+fieldset label input[type="radio"],
+fieldset label input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.15);
+  accent-color: var(--system-cyan);
 }
 
 .btn-continue {
   width: 100%;
   padding: 14px;
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 600;
-  color: #fff;
-  background-color: #2f6f4f;
+  letter-spacing: 0.03em;
+  color: var(--void);
+  background-color: var(--system-cyan);
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   cursor: pointer;
+  clip-path: polygon(
+    10px 0, 100% 0, 100% calc(100% - 10px),
+    calc(100% - 10px) 100%, 0 100%, 0 10px
+  );
 }
 
 .btn-continue:hover {
-  background-color: #285e42;
+  background-color: var(--system-blue);
+  color: var(--text);
 }
 
-/* Feedback shown after clicking Continue: success (default) or error */
+.btn-continue:disabled {
+  background-color: var(--panel-raised);
+  color: var(--text-dim);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  color: var(--text);
+  border-color: rgba(63, 233, 255, 0.5);
+}
+
 .status-message {
   margin: 0;
   font-size: 0.9rem;
-  color: #2f6f4f;
+  color: var(--vitality);
+  min-height: 1.2em;
 }
 
 .status-message--error {
-  color: #b3261e;
+  color: var(--breach);
 }
 
-/* ---- Dashboard ---- */
+/* ---- HUD header: name + level/tier, shared by dashboard and session screens ---- */
 
-.dashboard {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 24px 16px 48px;
+.hud-header {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hud-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.hud-tier {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--system-cyan);
+}
+
+.hud-level {
+  font-family: var(--font-display);
 }
 
 .dashboard-date {
-  margin: 0;
-  color: #555;
+  margin: 0 0 4px;
+  color: var(--text-dim);
   font-size: 0.9rem;
 }
 
-.dashboard-greeting {
-  margin: 4px 0 0;
-}
+/* ---- Today's workout card ---- */
 
-/* Today's workout card: the focal point of the whole screen, so it gets
-   the most contrast, the most padding, and the largest type on the page. */
 .today-card {
-  background-color: #2f6f4f;
-  color: #fff;
-  border-radius: 12px;
+  background-color: var(--panel);
+  border: 1px solid rgba(63, 233, 255, 0.4);
+  clip-path: polygon(
+    var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)),
+    calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch)
+  );
   padding: 28px 24px;
   text-align: center;
 }
@@ -192,42 +290,28 @@ fieldset label input[type="radio"] {
   margin: 0;
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
 }
 
 .today-type {
   margin: 8px 0 20px;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .today-start {
-  /* Reuses .btn-continue's sizing/weight, just recolored to stand out
-     against the card's own green background. */
-  background-color: #fff;
-  color: #2f6f4f;
+  box-shadow: 0 0 20px rgba(63, 233, 255, 0.25);
 }
 
-.today-start:hover {
-  background-color: #f0f0f0;
-}
-
-/* Rest-day copy is hidden unless the card is explicitly in the rest
-   state, and the training-only button is hidden when it is. */
 .today-rest-note {
   display: none;
-  margin: 0;
+  margin: 0 0 12px;
   font-size: 1.1rem;
+  color: var(--text-dim);
 }
 
 .today-card[data-state="rest"] {
-  /* Muted/neutral treatment — visually distinct from a "go train" card. */
-  background-color: #e5e5e5;
-  color: #333;
-}
-
-.today-card[data-state="rest"] .today-eyebrow {
-  color: #666;
+  border-color: rgba(63, 233, 255, 0.15);
 }
 
 .today-card[data-state="rest"] .today-start {
@@ -238,8 +322,8 @@ fieldset label input[type="radio"] {
   display: block;
 }
 
-/* Weekly strip: seven equal-width cells in one row, sized to fit a phone
-   screen without horizontal scrolling. */
+/* ---- Weekly strip ---- */
+
 .week-strip {
   list-style: none;
   display: flex;
@@ -256,72 +340,400 @@ fieldset label input[type="radio"] {
   align-items: center;
   gap: 6px;
   padding: 8px 2px;
-  border-radius: 8px;
   font-size: 0.8rem;
 }
 
 .week-day-label {
-  color: #555;
+  color: var(--text-dim);
 }
 
-/* Each state gets its own dot via ::after, plus an explicit text marker
-   for "rest" so a rest day never reads as an empty/unscheduled gap. */
 .week-day::after {
   content: "";
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background-color: #ccc;
+  background-color: rgba(111, 133, 152, 0.4);
 }
 
 .week-day[data-state="completed"]::after {
-  background-color: #2f6f4f;
+  background-color: var(--system-cyan);
 }
 
-.week-day[data-state="upcoming"]::after {
+.week-day[data-state="missed"]::after {
+  background-color: var(--breach);
+}
+
+.week-day[data-state="upcoming"]::after,
+.week-day[data-state="not-started"]::after {
   background-color: transparent;
-  border: 1.5px solid #2f6f4f;
+  border: 1.5px solid var(--system-cyan);
+}
+
+.week-day[data-state="not-started"] {
+  opacity: 0.5;
 }
 
 .week-day[data-state="today"] {
-  background-color: #eaf3ee;
-  outline: 2px solid #2f6f4f;
+  border: 1px solid var(--system-cyan);
+  box-shadow: 0 0 10px rgba(63, 233, 255, 0.3);
 }
 
 .week-day[data-state="today"]::after {
-  background-color: #2f6f4f;
+  background-color: var(--system-cyan);
 }
 
 .week-day[data-state="rest"] {
-  color: #888;
+  color: var(--text-dim);
 }
 
 .week-day[data-state="rest"] .week-day-label {
-  color: #888;
+  color: var(--text-dim);
 }
 
-/* Replaces the dot with a small "Rest" word so it reads as an affirmative
-   state, not a missing one. */
 .week-day[data-state="rest"]::after {
   content: "Rest";
   width: auto;
   height: auto;
-  border-radius: 0;
   background-color: transparent;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  color: var(--text-dim);
 }
 
-/* Temporary scaffolding for previewing both today-card states without
-   editing code — remove along with dashboard.js's demo-toggle logic once
-   the dashboard reads a real plan. */
+/* ---- Stat bars: segmented (20 discrete blocks), not a smooth gradient ---- */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.stat-label {
+  font-family: var(--font-display);
+  color: var(--text-dim);
+}
+
+.stat-bar {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 2px;
+  height: 10px;
+}
+
+.stat-bar span {
+  background-color: rgba(111, 133, 152, 0.25);
+}
+
+.stat-bar span.filled {
+  background-color: var(--system-cyan);
+}
+
+.stat-bar.projected span.filled {
+  background-color: var(--system-blue);
+}
+
+.stat-value {
+  text-align: right;
+  font-family: var(--font-display);
+}
+
+/* ---- Quote panel (results reveal, rest days, session complete, tier-up only) ---- */
+
+.quote-panel {
+  text-align: center;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 16px;
+  border-top: 1px solid rgba(63, 233, 255, 0.15);
+  border-bottom: 1px solid rgba(63, 233, 255, 0.15);
+}
+
+.quote-attribution {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--system-cyan);
+}
+
+/* ---- Results screen ---- */
+
+.system-label {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--system-cyan);
+}
+
+.system-heading {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 0 20px;
+}
+
+.stat-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-compare-arrow {
+  text-align: center;
+}
+
+.plan-assignment {
+  text-align: center;
+}
+
+.plan-assignment-days {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.nutrition-projection {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.nutrition-projection .num {
+  color: var(--text);
+}
+
+.reveal-step {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.reveal-step.shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-step {
+    transition: none;
+  }
+}
+
+/* ---- Questionnaire (one question per screen) ---- */
+
+.q-progress {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.q-progress-bar {
+  height: 3px;
+  background-color: rgba(111, 133, 152, 0.25);
+  margin-top: 6px;
+}
+
+.q-progress-bar-fill {
+  height: 100%;
+  background-color: var(--system-cyan);
+  transition: width 0.3s ease;
+}
+
+.q-question {
+  display: none;
+}
+
+.q-question.active {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.q-prompt {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.q-skip {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+/* ---- Session detail / active session ---- */
+
+.slot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slot-pattern {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.slot-exercise-name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.slot-prescription {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.slot-swap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slot-swap-option {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  background-color: var(--panel-raised);
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.slot-swap-option[aria-pressed="true"] {
+  border-color: var(--system-cyan);
+  color: var(--text);
+}
+
+.set-row {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.set-row input {
+  /* Grid items default to min-width: auto, which lets a number input's
+     intrinsic content size (digits + spinner arrows) push its 1fr track
+     wider than the track actually has room for — the row silently
+     overflows the screen instead of wrapping. min-width: 0 lets the track
+     win, which is what "1fr" was supposed to mean. Hit this for real
+     testing on a 390px-wide viewport: the Log button was rendering off
+     the right edge of the screen, unclickable. */
+  min-width: 0;
+  width: 100%;
+  padding: 10px 6px;
+  background-color: var(--panel-raised);
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.set-row-index {
+  color: var(--text-dim);
+  font-family: var(--font-display);
+}
+
+.set-log-btn {
+  padding: 10px 6px;
+  background-color: var(--panel-raised);
+  border: 1px solid rgba(63, 233, 255, 0.4);
+  color: var(--system-cyan);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.set-log-btn[aria-pressed="true"] {
+  background-color: var(--system-cyan);
+  color: var(--void);
+}
+
+/* ---- Session complete / tier-up ---- */
+
+.xp-gain {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--system-cyan);
+}
+
+.difficulty-picker {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.difficulty-picker button {
+  flex: 1;
+  padding: 12px 0;
+  background-color: var(--panel-raised);
+  border: 1px solid rgba(63, 233, 255, 0.25);
+  color: var(--text-dim);
+  font-family: var(--font-display);
+  cursor: pointer;
+}
+
+.difficulty-picker button[aria-pressed="true"] {
+  border-color: var(--system-cyan);
+  color: var(--system-cyan);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(4, 7, 11, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 10;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.tier-up-modal {
+  text-align: center;
+  border-color: var(--tier-violet);
+  box-shadow: 0 0 40px rgba(164, 107, 255, 0.4);
+}
+
+.tier-up-label {
+  color: var(--tier-violet);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.tier-up-name {
+  font-size: 2rem;
+  margin: 8px 0;
+  color: var(--tier-violet);
+}
+
+.level-up-modal {
+  text-align: center;
+}
+
+/* ---- Demo/dev-only scaffolding ---- */
+
 .demo-toggle {
   align-self: center;
   background: none;
-  border: 1px dashed #aaa;
-  border-radius: 6px;
+  border: 1px dashed var(--text-dim);
   padding: 6px 12px;
   font-size: 0.8rem;
-  color: #777;
+  color: var(--text-dim);
   cursor: pointer;
 }
 

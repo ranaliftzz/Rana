@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Complete — Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="screen">
+    <p class="system-label">[ SYSTEM ]</p>
+    <h1 class="system-heading">SESSION COMPLETE</h1>
+
+    <p id="xp-gain" class="xp-gain num">+0 XP</p>
+
+    <div id="stat-gains" class="panel"></div>
+
+    <div class="quote-panel">
+      <span id="quote-text"></span>
+      <span id="quote-attribution" class="quote-attribution"></span>
+    </div>
+
+    <a href="dashboard.html" class="btn-continue" style="text-align:center; text-decoration:none; display:block;">Back to dashboard</a>
+  </main>
+
+  <div id="level-up-backdrop" class="modal-backdrop" hidden>
+    <div class="panel panel--raised level-up-modal">
+      <p class="hud-tier">LEVEL UP</p>
+      <p id="level-up-value" class="tier-up-name num"></p>
+      <button type="button" class="btn-continue" data-close-modal>Continue</button>
+    </div>
+  </div>
+
+  <div id="tier-up-backdrop" class="modal-backdrop" hidden>
+    <div class="panel panel--raised tier-up-modal">
+      <p class="tier-up-label">TIER ADVANCEMENT</p>
+      <p id="tier-up-value" class="tier-up-name"></p>
+      <button type="button" class="btn-continue" data-close-modal>Continue</button>
+    </div>
+  </div>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="plan.js" defer></script>
+  <script src="game.js" defer></script>
+  <script src="session-complete.js" defer></script>
+</body>
+</html>

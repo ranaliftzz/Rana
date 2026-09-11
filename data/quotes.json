@@ -1,0 +1,50 @@
+[
+  {
+    "text": "Waste no more time arguing what a good man should be. Be one.",
+    "author": "Marcus Aurelius",
+    "translator": "George Long, 1862",
+    "context": ["results"]
+  },
+  {
+    "text": "Confine yourself to the present.",
+    "author": "Marcus Aurelius",
+    "translator": "George Long, 1862",
+    "context": ["rest"]
+  },
+  {
+    "text": "Adapt yourself to the things among which your lot has been cast, and love sincerely the fellow creatures with whom destiny has ordained that you shall live.",
+    "author": "Marcus Aurelius",
+    "translator": "George Long, 1862",
+    "context": ["rest"]
+  },
+  {
+    "text": "No man is free who is not master of himself.",
+    "author": "Epictetus",
+    "translator": "Long/Higginson",
+    "context": ["session-complete"]
+  },
+  {
+    "text": "First say to yourself what you would be; and then do what you have to do.",
+    "author": "Epictetus",
+    "translator": "Long/Higginson",
+    "context": ["session-complete"]
+  },
+  {
+    "text": "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",
+    "author": "Epictetus",
+    "translator": "Long/Higginson",
+    "context": ["rest"]
+  },
+  {
+    "text": "The impediment to action advances action. What stands in the way becomes the way.",
+    "author": "Marcus Aurelius",
+    "translator": "George Long, 1862",
+    "context": ["tier-up"]
+  },
+  {
+    "text": "Look within. Within is the fountain of good, and it will ever bubble up, if you will ever dig.",
+    "author": "Marcus Aurelius",
+    "translator": "George Long, 1862",
+    "context": ["tier-up"]
+  }
+]

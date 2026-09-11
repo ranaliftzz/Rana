@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Session — Rana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="screen">
+    <div>
+      <p class="today-eyebrow">Logging</p>
+      <h1 id="session-title" class="hud-name"></h1>
+    </div>
+
+    <div id="slot-list"></div>
+
+    <button id="finish-btn" type="button" class="btn-continue">Finish session</button>
+
+    <div id="difficulty-panel" class="panel" hidden>
+      <p class="slot-pattern">How did that feel?</p>
+      <div id="difficulty-picker" class="difficulty-picker">
+        <button type="button" data-difficulty="1">1</button>
+        <button type="button" data-difficulty="2">2</button>
+        <button type="button" data-difficulty="3">3</button>
+        <button type="button" data-difficulty="4">4</button>
+        <button type="button" data-difficulty="5">5</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="data.js" defer></script>
+  <script src="storage.js" defer></script>
+  <script src="plan.js" defer></script>
+  <script src="active-session.js" defer></script>
+</body>
+</html>
