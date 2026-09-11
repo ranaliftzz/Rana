@@ -1,0 +1,5217 @@
+{
+  "slots": [
+    {
+      "slot_id": 1001,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 1,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "5-7",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1002,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 3,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Squeeze the glutes to lock the ribcage down; finish with the head through the window."
+    },
+    {
+      "slot_id": 1003,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 3,
+      "movement_pattern": "Incline Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lower to ear level for a deep stretch; stop short of locking out to keep tension on the pec."
+    },
+    {
+      "slot_id": 1004,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 4,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Cable keeps tension at the bottom where dumbbells lose it \u2014 start from behind the hip."
+    },
+    {
+      "slot_id": 1005,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 5,
+      "movement_pattern": "Elbow Extension (Overhead)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Elbows pinned and high \u2014 the overhead position is what loads the long head, so chase the stretch."
+    },
+    {
+      "slot_id": 1006,
+      "workout_id": "PPL_PUSH_A",
+      "slot_order": 6,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 2,
+      "rep_range": "AMRAP (8-20)",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Finisher \u2014 stop two reps shy of true failure, not at it."
+    },
+    {
+      "slot_id": 1007,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 1,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Torso at ~45 deg, pull to the navel, and do not add torso English to finish the rep."
+    },
+    {
+      "slot_id": 1008,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "5-8",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Think elbows into the back pockets; reach a full dead hang each rep before pulling."
+    },
+    {
+      "slot_id": 1009,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Allow scapular protraction on the stretch, then retract \u2014 do not lock the torso rigid."
+    },
+    {
+      "slot_id": 1010,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Pull to the forehead and externally rotate so the thumbs finish pointing behind you."
+    },
+    {
+      "slot_id": 1011,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 5,
+      "movement_pattern": "Shoulder Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Hinge slightly and keep the elbows locked \u2014 push the bar down and back toward the hips."
+    },
+    {
+      "slot_id": 1012,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1013,
+      "workout_id": "PPL_PULL_A",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Flexion (Neutral)",
+      "working_sets": 2,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Neutral grip the whole way; brachialis growth pushes the biceps up and adds arm width."
+    },
+    {
+      "slot_id": 1014,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "5-7",
+      "target_rpe": 8,
+      "rest_seconds": 210,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 deg, knees track over mid-foot, and break at the knees and hips together."
+    },
+    {
+      "slot_id": 1015,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 2,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1016,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 3,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1017,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 4,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 3,
+      "rep_range": "8-10 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Front shin vertical and torso upright for quad bias; lean forward to shift it to the glute."
+    },
+    {
+      "slot_id": 1018,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 5,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 90,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Hip flexion pre-stretches the long head \u2014 this is the highest-return hamstring isolation."
+    },
+    {
+      "slot_id": 1019,
+      "workout_id": "PPL_LEGS_A",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1020,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1021,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 2,
+      "movement_pattern": "Incline Push",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Set bench to 30 deg \u2014 steeper shifts load off the pec and onto the front delt."
+    },
+    {
+      "slot_id": 1022,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 3,
+      "movement_pattern": "Decline Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lean the torso forward ~30 deg for chest bias; stop when the upper arm breaks parallel."
+    },
+    {
+      "slot_id": 1023,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Adduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-1-1-1",
+      "coaching_cue": "Drive upper arm toward the midline; pause one second in the stretched position."
+    },
+    {
+      "slot_id": 1024,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 5,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean away from a rack on the last set to extend the range at the bottom."
+    },
+    {
+      "slot_id": 1025,
+      "workout_id": "PPL_PUSH_B",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1026,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lean back ~15 deg and drive the elbows down and back, not the hands."
+    },
+    {
+      "slot_id": 1027,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Chest support removes the lower back as a limiter \u2014 take it closer to true failure."
+    },
+    {
+      "slot_id": 1028,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 3,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Unilateral work exposes side-to-side gaps \u2014 match the weak side's reps on both sides."
+    },
+    {
+      "slot_id": 1029,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Think of pushing the handles apart with the elbows, not pulling with the hands."
+    },
+    {
+      "slot_id": 1030,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 5,
+      "movement_pattern": "Scapular Elevation",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Straight up and down with a one-second hold at the top \u2014 rolling the shoulders adds nothing."
+    },
+    {
+      "slot_id": 1031,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Shortened)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Do not fully extend into the pad at the bottom under heavy load \u2014 protect the elbow."
+    },
+    {
+      "slot_id": 1032,
+      "workout_id": "PPL_PULL_B",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Flexion (Neutral)",
+      "working_sets": 2,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Spread the rope apart at the top to add a hard peak contraction."
+    },
+    {
+      "slot_id": 1033,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 1,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "4-6",
+      "target_rpe": 8,
+      "rest_seconds": 240,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Take the slack out of the bar before you pull; hips and shoulders rise at the same rate."
+    },
+    {
+      "slot_id": 1034,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 2,
+      "movement_pattern": "Hip Extension",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Chin tucked and ribs down; hold the top lockout a full second before descending."
+    },
+    {
+      "slot_id": 1035,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 3,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 90,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1036,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 4,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1037,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 5,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Round the upper back slightly and posteriorly tilt the pelvis at the top for glute bias."
+    },
+    {
+      "slot_id": 1038,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Bent knee takes the gastroc out \u2014 this is the only reliable way to load the soleus."
+    },
+    {
+      "slot_id": 1039,
+      "workout_id": "PPL_LEGS_B",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1040,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 1,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1041,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Superset with the bench press \u2014 this antagonist pairing is the heart of the Arnold split."
+    },
+    {
+      "slot_id": 1042,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 3,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lower to ear level for a deep stretch; stop short of locking out to keep tension on the pec."
+    },
+    {
+      "slot_id": 1043,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Torso at ~45 deg, pull to the navel, and do not add torso English to finish the rep."
+    },
+    {
+      "slot_id": 1044,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 5,
+      "movement_pattern": "Horizontal Adduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-1-1-1",
+      "coaching_cue": "Soft elbow held constant \u2014 the movement happens at the shoulder, not the elbow."
+    },
+    {
+      "slot_id": 1045,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 6,
+      "movement_pattern": "Shoulder Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Hinge slightly and keep the elbows locked \u2014 push the bar down and back toward the hips."
+    },
+    {
+      "slot_id": 1046,
+      "workout_id": "ARNOLD_CHEST_BACK",
+      "slot_order": 7,
+      "movement_pattern": "Shoulder Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips low and think ribcage expansion at the stretch \u2014 an Arnold-era staple."
+    },
+    {
+      "slot_id": 1047,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Rotate from neutral to pronated as you press \u2014 the rotation is the point, so keep it slow."
+    },
+    {
+      "slot_id": 1048,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 2,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lead with the elbow, pinky slightly high, and do not let the traps shrug at the top."
+    },
+    {
+      "slot_id": 1049,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Think of pushing the handles apart with the elbows, not pulling with the hands."
+    },
+    {
+      "slot_id": 1050,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 4,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lower behind the head rather than to the forehead to keep the long head under stretch."
+    },
+    {
+      "slot_id": 1051,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 5,
+      "movement_pattern": "Elbow Flexion",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Elbows stay at the ribs; stop the bar before the forearms pass vertical to keep tension."
+    },
+    {
+      "slot_id": 1052,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1053,
+      "workout_id": "ARNOLD_SHOULDERS_ARMS",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1054,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 5,
+      "rep_range": "6-8",
+      "target_rpe": 8.5,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Arnold ran high-set squats \u2014 if set five degrades badly, cut to four next week."
+    },
+    {
+      "slot_id": 1055,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 2,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1056,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 3,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1057,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 90,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1058,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1059,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 5,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1060,
+      "workout_id": "ARNOLD_LEGS",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1061,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 1,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "4-6",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1062,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "5-7",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Think elbows into the back pockets; reach a full dead hang each rep before pulling."
+    },
+    {
+      "slot_id": 1063,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 3,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1064,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Chest support removes the lower back as a limiter \u2014 take it closer to true failure."
+    },
+    {
+      "slot_id": 1065,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 5,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Cable keeps tension at the bottom where dumbbells lose it \u2014 start from behind the hip."
+    },
+    {
+      "slot_id": 1066,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Elbows stay at the ribs; stop the bar before the forearms pass vertical to keep tension."
+    },
+    {
+      "slot_id": 1067,
+      "workout_id": "UL_UPPER_A",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1068,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "4-6",
+      "target_rpe": 8,
+      "rest_seconds": 210,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 deg, knees track over mid-foot, and break at the knees and hips together."
+    },
+    {
+      "slot_id": 1069,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 2,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1070,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 3,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1071,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 90,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Hip flexion pre-stretches the long head \u2014 this is the highest-return hamstring isolation."
+    },
+    {
+      "slot_id": 1072,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 5,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1073,
+      "workout_id": "UL_LOWER_A",
+      "slot_order": 6,
+      "movement_pattern": "Anti-Extension",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Ribs down and glutes squeezed; extend only as far as you can hold the pelvis tucked."
+    },
+    {
+      "slot_id": 1074,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 1,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lower to ear level for a deep stretch; stop short of locking out to keep tension on the pec."
+    },
+    {
+      "slot_id": 1075,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lean back ~15 deg and drive the elbows down and back, not the hands."
+    },
+    {
+      "slot_id": 1076,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Allow scapular protraction on the stretch, then retract \u2014 do not lock the torso rigid."
+    },
+    {
+      "slot_id": 1077,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 4,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lead with the elbow, pinky slightly high, and do not let the traps shrug at the top."
+    },
+    {
+      "slot_id": 1078,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 5,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Pull to the forehead and externally rotate so the thumbs finish pointing behind you."
+    },
+    {
+      "slot_id": 1079,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1080,
+      "workout_id": "UL_UPPER_B",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Extension (Overhead)",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Elbows pinned and high \u2014 the overhead position is what loads the long head, so chase the stretch."
+    },
+    {
+      "slot_id": 1081,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Feet low on the platform for maximum quad bias; control the descent for a full 3 seconds."
+    },
+    {
+      "slot_id": 1082,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 2,
+      "movement_pattern": "Hip Extension",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Chin tucked and ribs down; hold the top lockout a full second before descending."
+    },
+    {
+      "slot_id": 1083,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 3,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 3,
+      "rep_range": "8-10 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Front shin vertical and torso upright for quad bias; lean forward to shift it to the glute."
+    },
+    {
+      "slot_id": 1084,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1085,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1086,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Bent knee takes the gastroc out \u2014 this is the only reliable way to load the soleus."
+    },
+    {
+      "slot_id": 1087,
+      "workout_id": "UL_LOWER_B",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1088,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "High-bar position keeps the session quad-dominant, which is the point of an anterior day."
+    },
+    {
+      "slot_id": 1089,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1090,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 3,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1091,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 4,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1092,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1093,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 6,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Cable keeps tension at the bottom where dumbbells lose it \u2014 start from behind the hip."
+    },
+    {
+      "slot_id": 1094,
+      "workout_id": "AP_ANTERIOR_A",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1095,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 1,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 4,
+      "rep_range": "4-6",
+      "target_rpe": 8,
+      "rest_seconds": 240,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "More knee-dominant than conventional and far easier to coach \u2014 the best entry-point pull."
+    },
+    {
+      "slot_id": 1096,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Think elbows into the back pockets; reach a full dead hang each rep before pulling."
+    },
+    {
+      "slot_id": 1097,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Torso at ~45 deg, pull to the navel, and do not add torso English to finish the rep."
+    },
+    {
+      "slot_id": 1098,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 90,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Hip flexion pre-stretches the long head \u2014 this is the highest-return hamstring isolation."
+    },
+    {
+      "slot_id": 1099,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 5,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Round the upper back slightly and posteriorly tilt the pelvis at the top for glute bias."
+    },
+    {
+      "slot_id": 1100,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 6,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Think of pushing the handles apart with the elbows, not pulling with the hands."
+    },
+    {
+      "slot_id": 1101,
+      "workout_id": "AP_POSTERIOR_A",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1102,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Elbows high the entire rep \u2014 the moment they drop, the bar rolls and the rep is over."
+    },
+    {
+      "slot_id": 1103,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 2,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Set bench to 30 deg \u2014 steeper shifts load off the pec and onto the front delt."
+    },
+    {
+      "slot_id": 1104,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 3,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 3,
+      "rep_range": "10-12 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Long stride for glutes, short stride for quads \u2014 pick one and keep it consistent."
+    },
+    {
+      "slot_id": 1105,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 4,
+      "movement_pattern": "Decline Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lean the torso forward ~30 deg for chest bias; stop when the upper arm breaks parallel."
+    },
+    {
+      "slot_id": 1106,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1107,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 6,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lead with the elbow, pinky slightly high, and do not let the traps shrug at the top."
+    },
+    {
+      "slot_id": 1108,
+      "workout_id": "AP_ANTERIOR_B",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1109,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 1,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1110,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Chest support removes the lower back as a limiter \u2014 take it closer to true failure."
+    },
+    {
+      "slot_id": 1111,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 3,
+      "movement_pattern": "Hip Extension",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Chin tucked and ribs down; hold the top lockout a full second before descending."
+    },
+    {
+      "slot_id": 1112,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 4,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lean back ~15 deg and drive the elbows down and back, not the hands."
+    },
+    {
+      "slot_id": 1113,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 5,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1114,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 6,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Pull to the forehead and externally rotate so the thumbs finish pointing behind you."
+    },
+    {
+      "slot_id": 1115,
+      "workout_id": "AP_POSTERIOR_B",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Flexion (Neutral)",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Neutral grip the whole way; brachialis growth pushes the biceps up and adds arm width."
+    },
+    {
+      "slot_id": 1116,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "5-8",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 deg, knees track over mid-foot, and break at the knees and hips together."
+    },
+    {
+      "slot_id": 1117,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "5-8",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1118,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Allow scapular protraction on the stretch, then retract \u2014 do not lock the torso rigid."
+    },
+    {
+      "slot_id": 1119,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 4,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1120,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 5,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lead with the elbow, pinky slightly high, and do not let the traps shrug at the top."
+    },
+    {
+      "slot_id": 1121,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion",
+      "working_sets": 2,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Constant tension throughout \u2014 ideal as the last biceps movement of a session."
+    },
+    {
+      "slot_id": 1122,
+      "workout_id": "FB_DAY_A",
+      "slot_order": 7,
+      "movement_pattern": "Anti-Extension",
+      "working_sets": 3,
+      "rep_range": "30-45 sec",
+      "target_rpe": 8,
+      "rest_seconds": 45,
+      "tempo": "Isometric",
+      "coaching_cue": "Actively push the floor away and tuck the pelvis \u2014 a sagging plank trains nothing."
+    },
+    {
+      "slot_id": 1123,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 1,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 4,
+      "rep_range": "4-6",
+      "target_rpe": 8,
+      "rest_seconds": 210,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Trap bar over conventional here \u2014 far lower technical cost when you are pulling weekly."
+    },
+    {
+      "slot_id": 1124,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lean back ~15 deg and drive the elbows down and back, not the hands."
+    },
+    {
+      "slot_id": 1125,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 3,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1126,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 4,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1127,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 5,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Hip flexion pre-stretches the long head \u2014 this is the highest-return hamstring isolation."
+    },
+    {
+      "slot_id": 1128,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1129,
+      "workout_id": "FB_DAY_B",
+      "slot_order": 7,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1130,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 1,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 4,
+      "rep_range": "8-10 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Front shin vertical and torso upright for quad bias; lean forward to shift it to the glute."
+    },
+    {
+      "slot_id": 1131,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 2,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lower to ear level for a deep stretch; stop short of locking out to keep tension on the pec."
+    },
+    {
+      "slot_id": 1132,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Let the shoulder blade travel forward at the bottom, then retract \u2014 full scapular range."
+    },
+    {
+      "slot_id": 1133,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 4,
+      "movement_pattern": "Hip Extension",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Chin tucked and ribs down; hold the top lockout a full second before descending."
+    },
+    {
+      "slot_id": 1134,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 5,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Pull to the forehead and externally rotate so the thumbs finish pointing behind you."
+    },
+    {
+      "slot_id": 1135,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1136,
+      "workout_id": "FB_DAY_C",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1137,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 1,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 4,
+      "rep_range": "5-7",
+      "target_rpe": 8,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 degrees, tuck elbows ~45 deg, touch at nipple line and drive the bar back over the shoulder."
+    },
+    {
+      "slot_id": 1138,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1139,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 3,
+      "movement_pattern": "Incline Push",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lower to ear level for a deep stretch; stop short of locking out to keep tension on the pec."
+    },
+    {
+      "slot_id": 1140,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 4,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Cable keeps tension at the bottom where dumbbells lose it \u2014 start from behind the hip."
+    },
+    {
+      "slot_id": 1141,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 5,
+      "movement_pattern": "Horizontal Adduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-1-1-1",
+      "coaching_cue": "Drive upper arm toward the midline; pause one second in the stretched position."
+    },
+    {
+      "slot_id": 1142,
+      "workout_id": "HYB_PUSH",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Extension (Overhead)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Elbows pinned and high \u2014 the overhead position is what loads the long head, so chase the stretch."
+    },
+    {
+      "slot_id": 1143,
+      "workout_id": "HYB_PULL",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "5-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Think elbows into the back pockets; reach a full dead hang each rep before pulling."
+    },
+    {
+      "slot_id": 1144,
+      "workout_id": "HYB_PULL",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Torso at ~45 deg, pull to the navel, and do not add torso English to finish the rep."
+    },
+    {
+      "slot_id": 1145,
+      "workout_id": "HYB_PULL",
+      "slot_order": 3,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Allow scapular protraction on the stretch, then retract \u2014 do not lock the torso rigid."
+    },
+    {
+      "slot_id": 1146,
+      "workout_id": "HYB_PULL",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Think of pushing the handles apart with the elbows, not pulling with the hands."
+    },
+    {
+      "slot_id": 1147,
+      "workout_id": "HYB_PULL",
+      "slot_order": 5,
+      "movement_pattern": "Elbow Flexion (Shortened)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Do not fully extend into the pad at the bottom under heavy load \u2014 protect the elbow."
+    },
+    {
+      "slot_id": 1148,
+      "workout_id": "HYB_PULL",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Neutral)",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Spread the rope apart at the top to add a hard peak contraction."
+    },
+    {
+      "slot_id": 1149,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "5-7",
+      "target_rpe": 8,
+      "rest_seconds": 210,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Brace 360 deg, knees track over mid-foot, and break at the knees and hips together."
+    },
+    {
+      "slot_id": 1150,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 2,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 3,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1151,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 3,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Feet mid-platform; stop the descent the instant the lower back starts to round off the pad."
+    },
+    {
+      "slot_id": 1152,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1153,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1154,
+      "workout_id": "HYB_LEGS",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1155,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 1,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Set bench to 30 deg \u2014 steeper shifts load off the pec and onto the front delt."
+    },
+    {
+      "slot_id": 1156,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Lean back ~15 deg and drive the elbows down and back, not the hands."
+    },
+    {
+      "slot_id": 1157,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 3,
+      "movement_pattern": "Decline Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lean the torso forward ~30 deg for chest bias; stop when the upper arm breaks parallel."
+    },
+    {
+      "slot_id": 1158,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Let the shoulder blade travel forward at the bottom, then retract \u2014 full scapular range."
+    },
+    {
+      "slot_id": 1159,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 5,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lead with the elbow, pinky slightly high, and do not let the traps shrug at the top."
+    },
+    {
+      "slot_id": 1160,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1161,
+      "workout_id": "HYB_UPPER",
+      "slot_order": 7,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1162,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Feet low on the platform for maximum quad bias; control the descent for a full 3 seconds."
+    },
+    {
+      "slot_id": 1163,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 2,
+      "movement_pattern": "Hip Extension",
+      "working_sets": 4,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Chin tucked and ribs down; hold the top lockout a full second before descending."
+    },
+    {
+      "slot_id": 1164,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 3,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 3,
+      "rep_range": "8-10 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Front shin vertical and torso upright for quad bias; lean forward to shift it to the glute."
+    },
+    {
+      "slot_id": 1165,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Hip flexion pre-stretches the long head \u2014 this is the highest-return hamstring isolation."
+    },
+    {
+      "slot_id": 1166,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 5,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Bent knee takes the gastroc out \u2014 this is the only reliable way to load the soleus."
+    },
+    {
+      "slot_id": 1167,
+      "workout_id": "HYB_LOWER",
+      "slot_order": 6,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1168,
+      "workout_id": "AES_PUSH",
+      "slot_order": 1,
+      "movement_pattern": "Incline Push",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Upper chest leads on an aesthetics day \u2014 it is the shelf that reads under a shirt."
+    },
+    {
+      "slot_id": 1169,
+      "workout_id": "AES_PUSH",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Drive the dumbbells toward each other at the top without letting them touch \u2014 keeps the pec loaded."
+    },
+    {
+      "slot_id": 1170,
+      "workout_id": "AES_PUSH",
+      "slot_order": 3,
+      "movement_pattern": "Decline Push",
+      "working_sets": 3,
+      "rep_range": "8-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Lean the torso forward ~30 deg for chest bias; stop when the upper arm breaks parallel."
+    },
+    {
+      "slot_id": 1171,
+      "workout_id": "AES_PUSH",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Adduction",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-1-1-1",
+      "coaching_cue": "Finish with the hands crossing below the sternum to bias the lower pec fibers."
+    },
+    {
+      "slot_id": 1172,
+      "workout_id": "AES_PUSH",
+      "slot_order": 5,
+      "movement_pattern": "Elbow Extension (Overhead)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Elbows pinned and high \u2014 the overhead position is what loads the long head, so chase the stretch."
+    },
+    {
+      "slot_id": 1173,
+      "workout_id": "AES_PUSH",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Upper arm vertical and still; separate the rope at lockout."
+    },
+    {
+      "slot_id": 1174,
+      "workout_id": "AES_PULL",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "6-8",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Think elbows into the back pockets; reach a full dead hang each rep before pulling."
+    },
+    {
+      "slot_id": 1175,
+      "workout_id": "AES_PULL",
+      "slot_order": 2,
+      "movement_pattern": "Horizontal Pull",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "2-1-1-0",
+      "coaching_cue": "Let the shoulder blade travel forward at the bottom, then retract \u2014 full scapular range."
+    },
+    {
+      "slot_id": 1176,
+      "workout_id": "AES_PULL",
+      "slot_order": 3,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 90,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Unilateral work exposes side-to-side gaps \u2014 match the weak side's reps on both sides."
+    },
+    {
+      "slot_id": 1177,
+      "workout_id": "AES_PULL",
+      "slot_order": 4,
+      "movement_pattern": "Shoulder Extension",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Hinge slightly and keep the elbows locked \u2014 push the bar down and back toward the hips."
+    },
+    {
+      "slot_id": 1178,
+      "workout_id": "AES_PULL",
+      "slot_order": 5,
+      "movement_pattern": "Elbow Flexion (Stretched)",
+      "working_sets": 3,
+      "rep_range": "10-12",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Shoulders pinned to the pad \u2014 if the elbow drifts forward you have lost the stretch position."
+    },
+    {
+      "slot_id": 1179,
+      "workout_id": "AES_PULL",
+      "slot_order": 6,
+      "movement_pattern": "Elbow Flexion (Neutral)",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Spread the rope apart at the top to add a hard peak contraction."
+    },
+    {
+      "slot_id": 1180,
+      "workout_id": "AES_LEGS",
+      "slot_order": 1,
+      "movement_pattern": "Squat (Knee Dominant)",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8.5,
+      "rest_seconds": 180,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Feet low on the platform for maximum quad bias; control the descent for a full 3 seconds."
+    },
+    {
+      "slot_id": 1181,
+      "workout_id": "AES_LEGS",
+      "slot_order": 2,
+      "movement_pattern": "Hip Hinge",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Push the hips back with the bar tracking the thighs; stop the instant the hamstrings cap out."
+    },
+    {
+      "slot_id": 1182,
+      "workout_id": "AES_LEGS",
+      "slot_order": 3,
+      "movement_pattern": "Lunge (Unilateral)",
+      "working_sets": 3,
+      "rep_range": "8-10 per leg",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Front shin vertical and torso upright for quad bias; lean forward to shift it to the glute."
+    },
+    {
+      "slot_id": 1183,
+      "workout_id": "AES_LEGS",
+      "slot_order": 4,
+      "movement_pattern": "Knee Flexion",
+      "working_sets": 3,
+      "rep_range": "12-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "3-1-1-0",
+      "coaching_cue": "Keep the hips pressed down \u2014 lifting them shortens the hamstring and steals the rep."
+    },
+    {
+      "slot_id": 1184,
+      "workout_id": "AES_LEGS",
+      "slot_order": 5,
+      "movement_pattern": "Knee Extension",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Lean the torso back to stretch the rectus femoris across the hip; pause one second at lockout."
+    },
+    {
+      "slot_id": 1185,
+      "workout_id": "AES_LEGS",
+      "slot_order": 6,
+      "movement_pattern": "Ankle Plantarflexion",
+      "working_sets": 4,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-2-1-0",
+      "coaching_cue": "Two-second pause in the bottom stretch; knee stays straight to keep the gastroc loaded."
+    },
+    {
+      "slot_id": 1186,
+      "workout_id": "AES_LEGS",
+      "slot_order": 7,
+      "movement_pattern": "Trunk Flexion",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Posteriorly tilt the pelvis first \u2014 if the hips never curl under, this is just a hip flexor drill."
+    },
+    {
+      "slot_id": 1187,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 1,
+      "movement_pattern": "Vertical Push",
+      "working_sets": 4,
+      "rep_range": "8-10",
+      "target_rpe": 8,
+      "rest_seconds": 150,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Set the bench one notch off vertical; bring the dumbbells to ear height, not below."
+    },
+    {
+      "slot_id": 1188,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 2,
+      "movement_pattern": "Vertical Pull",
+      "working_sets": 4,
+      "rep_range": "10-12",
+      "target_rpe": 8.5,
+      "rest_seconds": 120,
+      "tempo": "3-0-1-0",
+      "coaching_cue": "Wide grip and a pronounced lean-back \u2014 lat width is what builds the taper."
+    },
+    {
+      "slot_id": 1189,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 3,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 4,
+      "rep_range": "12-20",
+      "target_rpe": 9.5,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Cable keeps tension at the bottom where dumbbells lose it \u2014 start from behind the hip."
+    },
+    {
+      "slot_id": 1190,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 4,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 4,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Think of pushing the handles apart with the elbows, not pulling with the hands."
+    },
+    {
+      "slot_id": 1191,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 5,
+      "movement_pattern": "Horizontal Abduction",
+      "working_sets": 3,
+      "rep_range": "15-20",
+      "target_rpe": 9,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-1",
+      "coaching_cue": "Pull to the forehead and externally rotate so the thumbs finish pointing behind you."
+    },
+    {
+      "slot_id": 1192,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 6,
+      "movement_pattern": "Scapular Elevation",
+      "working_sets": 3,
+      "rep_range": "10-15",
+      "target_rpe": 9,
+      "rest_seconds": 75,
+      "tempo": "2-0-1-2",
+      "coaching_cue": "Straight up and down with a one-second hold at the top \u2014 rolling the shoulders adds nothing."
+    },
+    {
+      "slot_id": 1193,
+      "workout_id": "AES_SHOULDERS_BACK",
+      "slot_order": 7,
+      "movement_pattern": "Shoulder Abduction",
+      "working_sets": 2,
+      "rep_range": "12-15",
+      "target_rpe": 10,
+      "rest_seconds": 60,
+      "tempo": "2-0-1-0",
+      "coaching_cue": "Myo-rep finisher: one all-out set, rest 15 sec, then 3-5 mini-sets to failure."
+    }
+  ],
+  "slot_options": [
+    {
+      "slot_id": 1001,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1001,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1001,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1002,
+      "exercise_key": "ohp_bb",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1002,
+      "exercise_key": "seated_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1002,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1003,
+      "exercise_key": "incline_db",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1003,
+      "exercise_key": "incline_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1003,
+      "exercise_key": "incline_machine_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1004,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1004,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1004,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1005,
+      "exercise_key": "oh_tri_cable",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1005,
+      "exercise_key": "db_oh_extension",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1005,
+      "exercise_key": "skullcrusher",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1006,
+      "exercise_key": "deficit_pushup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1006,
+      "exercise_key": "pushup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1006,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1007,
+      "exercise_key": "bb_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1007,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1007,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1008,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1008,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1008,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1009,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1009,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1009,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1010,
+      "exercise_key": "face_pull",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1010,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1010,
+      "exercise_key": "band_pull_apart",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1011,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1011,
+      "exercise_key": "db_pullover",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1011,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1012,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1012,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1012,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1013,
+      "exercise_key": "hammer_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1013,
+      "exercise_key": "rope_hammer",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1013,
+      "exercise_key": "reverse_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1014,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1014,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1014,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1015,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1015,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1015,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1016,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1016,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1016,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1017,
+      "exercise_key": "bulgarian",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1017,
+      "exercise_key": "walking_lunge",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1017,
+      "exercise_key": "step_up",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1018,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1018,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1018,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1019,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1019,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1019,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1020,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1020,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1020,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1021,
+      "exercise_key": "incline_bb",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1021,
+      "exercise_key": "incline_db",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1021,
+      "exercise_key": "incline_smith_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1022,
+      "exercise_key": "weighted_dip",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1022,
+      "exercise_key": "machine_assisted_dip",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1022,
+      "exercise_key": "decline_db_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1023,
+      "exercise_key": "pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1023,
+      "exercise_key": "cable_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1023,
+      "exercise_key": "db_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1024,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1024,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1024,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1025,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1025,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1025,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1026,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1026,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1026,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1027,
+      "exercise_key": "tbar_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1027,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1027,
+      "exercise_key": "cs_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1028,
+      "exercise_key": "sa_lat_pd",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1028,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1028,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1029,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1029,
+      "exercise_key": "db_rear_delt_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1029,
+      "exercise_key": "cable_reverse_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1030,
+      "exercise_key": "bb_shrug",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1030,
+      "exercise_key": "db_shrug",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1030,
+      "exercise_key": "cable_shrug",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1031,
+      "exercise_key": "preacher_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1031,
+      "exercise_key": "machine_preacher_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1031,
+      "exercise_key": "db_preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1032,
+      "exercise_key": "rope_hammer",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1032,
+      "exercise_key": "hammer_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1032,
+      "exercise_key": "reverse_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1033,
+      "exercise_key": "deadlift",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1033,
+      "exercise_key": "trap_bar_dl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1033,
+      "exercise_key": "rdl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1034,
+      "exercise_key": "hip_thrust",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1034,
+      "exercise_key": "machine_hip_thrust",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1034,
+      "exercise_key": "glute_bridge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1035,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1035,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1035,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1036,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1036,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1036,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1037,
+      "exercise_key": "back_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1037,
+      "exercise_key": "cable_pull_through",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1037,
+      "exercise_key": "rdl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1038,
+      "exercise_key": "seated_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1038,
+      "exercise_key": "leg_press_calf_raise_bent_knee",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1038,
+      "exercise_key": "smith_seated_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1039,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1039,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1039,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1040,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1040,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1040,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1041,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1041,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1041,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1042,
+      "exercise_key": "incline_db",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1042,
+      "exercise_key": "incline_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1042,
+      "exercise_key": "incline_machine_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1043,
+      "exercise_key": "bb_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1043,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1043,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1044,
+      "exercise_key": "cable_fly",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1044,
+      "exercise_key": "pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1044,
+      "exercise_key": "db_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1045,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1045,
+      "exercise_key": "db_pullover",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1045,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1046,
+      "exercise_key": "db_pullover",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1046,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1046,
+      "exercise_key": "machine_pullover",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1047,
+      "exercise_key": "arnold_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1047,
+      "exercise_key": "seated_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1047,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1048,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1048,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1048,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1049,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1049,
+      "exercise_key": "db_rear_delt_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1049,
+      "exercise_key": "cable_reverse_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1050,
+      "exercise_key": "skullcrusher",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1050,
+      "exercise_key": "oh_tri_cable",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1050,
+      "exercise_key": "db_oh_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1051,
+      "exercise_key": "bb_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1051,
+      "exercise_key": "ez_bar_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1051,
+      "exercise_key": "cable_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1052,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1052,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1052,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1053,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1053,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1053,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1054,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1054,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1054,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1055,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1055,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1055,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1056,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1056,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1056,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1057,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1057,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1057,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1058,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1058,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1058,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1059,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1059,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1059,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1060,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1060,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1060,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1061,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1061,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1061,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1062,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1062,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1062,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1063,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1063,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1063,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1064,
+      "exercise_key": "tbar_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1064,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1064,
+      "exercise_key": "cs_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1065,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1065,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1065,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1066,
+      "exercise_key": "bb_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1066,
+      "exercise_key": "ez_bar_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1066,
+      "exercise_key": "cable_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1067,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1067,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1067,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1068,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1068,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1068,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1069,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1069,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1069,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1070,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1070,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1070,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1071,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1071,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1071,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1072,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1072,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1072,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1073,
+      "exercise_key": "ab_wheel",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1073,
+      "exercise_key": "plank",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1073,
+      "exercise_key": "cable_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1074,
+      "exercise_key": "incline_db",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1074,
+      "exercise_key": "incline_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1074,
+      "exercise_key": "incline_machine_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1075,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1075,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1075,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1076,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1076,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1076,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1077,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1077,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1077,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1078,
+      "exercise_key": "face_pull",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1078,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1078,
+      "exercise_key": "band_pull_apart",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1079,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1079,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1079,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1080,
+      "exercise_key": "oh_tri_cable",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1080,
+      "exercise_key": "db_oh_extension",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1080,
+      "exercise_key": "skullcrusher",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1081,
+      "exercise_key": "hack_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1081,
+      "exercise_key": "back_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1081,
+      "exercise_key": "leg_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1082,
+      "exercise_key": "hip_thrust",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1082,
+      "exercise_key": "machine_hip_thrust",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1082,
+      "exercise_key": "glute_bridge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1083,
+      "exercise_key": "bulgarian",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1083,
+      "exercise_key": "walking_lunge",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1083,
+      "exercise_key": "step_up",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1084,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1084,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1084,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1085,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1085,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1085,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1086,
+      "exercise_key": "seated_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1086,
+      "exercise_key": "leg_press_calf_raise_bent_knee",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1086,
+      "exercise_key": "smith_seated_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1087,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1087,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1087,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1088,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1088,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1088,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1089,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1089,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1089,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1090,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1090,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1090,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1091,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1091,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1091,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1092,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1092,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1092,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1093,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1093,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1093,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1094,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1094,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1094,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1095,
+      "exercise_key": "trap_bar_dl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1095,
+      "exercise_key": "deadlift",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1095,
+      "exercise_key": "leg_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1096,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1096,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1096,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1097,
+      "exercise_key": "bb_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1097,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1097,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1098,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1098,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1098,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1099,
+      "exercise_key": "back_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1099,
+      "exercise_key": "cable_pull_through",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1099,
+      "exercise_key": "rdl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1100,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1100,
+      "exercise_key": "db_rear_delt_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1100,
+      "exercise_key": "cable_reverse_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1101,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1101,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1101,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1102,
+      "exercise_key": "front_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1102,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1102,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1103,
+      "exercise_key": "incline_bb",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1103,
+      "exercise_key": "incline_db",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1103,
+      "exercise_key": "incline_smith_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1104,
+      "exercise_key": "walking_lunge",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1104,
+      "exercise_key": "bulgarian",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1104,
+      "exercise_key": "reverse_lunge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1105,
+      "exercise_key": "weighted_dip",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1105,
+      "exercise_key": "machine_assisted_dip",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1105,
+      "exercise_key": "decline_db_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1106,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1106,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1106,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1107,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1107,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1107,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1108,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1108,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1108,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1109,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1109,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1109,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1110,
+      "exercise_key": "tbar_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1110,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1110,
+      "exercise_key": "cs_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1111,
+      "exercise_key": "hip_thrust",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1111,
+      "exercise_key": "machine_hip_thrust",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1111,
+      "exercise_key": "glute_bridge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1112,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1112,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1112,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1113,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1113,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1113,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1114,
+      "exercise_key": "face_pull",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1114,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1114,
+      "exercise_key": "band_pull_apart",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1115,
+      "exercise_key": "hammer_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1115,
+      "exercise_key": "rope_hammer",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1115,
+      "exercise_key": "reverse_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1116,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1116,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1116,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1117,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1117,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1117,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1118,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1118,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1118,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1119,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1119,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1119,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1120,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1120,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1120,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1121,
+      "exercise_key": "cable_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1121,
+      "exercise_key": "bb_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1121,
+      "exercise_key": "db_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1122,
+      "exercise_key": "plank",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1122,
+      "exercise_key": "ab_wheel",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1122,
+      "exercise_key": "dead_bug",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1123,
+      "exercise_key": "trap_bar_dl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1123,
+      "exercise_key": "deadlift",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1123,
+      "exercise_key": "leg_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1124,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1124,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1124,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1125,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1125,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1125,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1126,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1126,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1126,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1127,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1127,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1127,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1128,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1128,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1128,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1129,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1129,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1129,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1130,
+      "exercise_key": "bulgarian",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1130,
+      "exercise_key": "walking_lunge",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1130,
+      "exercise_key": "step_up",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1131,
+      "exercise_key": "incline_db",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1131,
+      "exercise_key": "incline_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1131,
+      "exercise_key": "incline_machine_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1132,
+      "exercise_key": "cs_db_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1132,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1132,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1133,
+      "exercise_key": "hip_thrust",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1133,
+      "exercise_key": "machine_hip_thrust",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1133,
+      "exercise_key": "glute_bridge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1134,
+      "exercise_key": "face_pull",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1134,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1134,
+      "exercise_key": "band_pull_apart",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1135,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1135,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1135,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1136,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1136,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1136,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1137,
+      "exercise_key": "bench",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1137,
+      "exercise_key": "flat_db_press",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1137,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1138,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1138,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1138,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1139,
+      "exercise_key": "incline_db",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1139,
+      "exercise_key": "incline_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1139,
+      "exercise_key": "incline_machine_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1140,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1140,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1140,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1141,
+      "exercise_key": "pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1141,
+      "exercise_key": "cable_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1141,
+      "exercise_key": "db_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1142,
+      "exercise_key": "oh_tri_cable",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1142,
+      "exercise_key": "db_oh_extension",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1142,
+      "exercise_key": "skullcrusher",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1143,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1143,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1143,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1144,
+      "exercise_key": "bb_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1144,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1144,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1145,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1145,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1145,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1146,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1146,
+      "exercise_key": "db_rear_delt_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1146,
+      "exercise_key": "cable_reverse_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1147,
+      "exercise_key": "preacher_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1147,
+      "exercise_key": "machine_preacher_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1147,
+      "exercise_key": "db_preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1148,
+      "exercise_key": "rope_hammer",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1148,
+      "exercise_key": "hammer_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1148,
+      "exercise_key": "reverse_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1149,
+      "exercise_key": "back_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1149,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1149,
+      "exercise_key": "goblet_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1150,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1150,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1150,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1151,
+      "exercise_key": "leg_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1151,
+      "exercise_key": "hack_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1151,
+      "exercise_key": "back_squat",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1152,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1152,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1152,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1153,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1153,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1153,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1154,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1154,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1154,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1155,
+      "exercise_key": "incline_bb",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1155,
+      "exercise_key": "incline_db",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1155,
+      "exercise_key": "incline_smith_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1156,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1156,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1156,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1157,
+      "exercise_key": "weighted_dip",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1157,
+      "exercise_key": "machine_assisted_dip",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1157,
+      "exercise_key": "decline_db_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1158,
+      "exercise_key": "cs_db_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1158,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1158,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1159,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1159,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1159,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1160,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1160,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1160,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1161,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1161,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1161,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1162,
+      "exercise_key": "hack_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1162,
+      "exercise_key": "back_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1162,
+      "exercise_key": "leg_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1163,
+      "exercise_key": "hip_thrust",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1163,
+      "exercise_key": "machine_hip_thrust",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1163,
+      "exercise_key": "glute_bridge",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1164,
+      "exercise_key": "bulgarian",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1164,
+      "exercise_key": "walking_lunge",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1164,
+      "exercise_key": "step_up",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1165,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1165,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1165,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1166,
+      "exercise_key": "seated_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1166,
+      "exercise_key": "leg_press_calf_raise_bent_knee",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1166,
+      "exercise_key": "smith_seated_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1167,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1167,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1167,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1168,
+      "exercise_key": "incline_bb",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1168,
+      "exercise_key": "incline_db",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1168,
+      "exercise_key": "incline_smith_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1169,
+      "exercise_key": "flat_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1169,
+      "exercise_key": "bench",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1169,
+      "exercise_key": "machine_chest_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1170,
+      "exercise_key": "weighted_dip",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1170,
+      "exercise_key": "machine_assisted_dip",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1170,
+      "exercise_key": "decline_db_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1171,
+      "exercise_key": "high_low_cable_fly",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1171,
+      "exercise_key": "decline_db_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1171,
+      "exercise_key": "pec_deck",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1172,
+      "exercise_key": "oh_tri_cable",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1172,
+      "exercise_key": "db_oh_extension",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1172,
+      "exercise_key": "skullcrusher",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1173,
+      "exercise_key": "rope_pushdown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1173,
+      "exercise_key": "straight_bar_pushdown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1173,
+      "exercise_key": "bench_dip",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1174,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1174,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1174,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1175,
+      "exercise_key": "cs_db_row",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1175,
+      "exercise_key": "tbar_row",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1175,
+      "exercise_key": "seated_cable_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1176,
+      "exercise_key": "sa_lat_pd",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1176,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1176,
+      "exercise_key": "sa_db_row",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1177,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1177,
+      "exercise_key": "db_pullover",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1177,
+      "exercise_key": "straight_arm_pd",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1178,
+      "exercise_key": "incline_db_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1178,
+      "exercise_key": "bayesian_cable_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1178,
+      "exercise_key": "preacher_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1179,
+      "exercise_key": "rope_hammer",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1179,
+      "exercise_key": "hammer_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1179,
+      "exercise_key": "reverse_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1180,
+      "exercise_key": "hack_squat",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1180,
+      "exercise_key": "back_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1180,
+      "exercise_key": "leg_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1181,
+      "exercise_key": "rdl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1181,
+      "exercise_key": "db_rdl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1181,
+      "exercise_key": "back_extension",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1182,
+      "exercise_key": "bulgarian",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1182,
+      "exercise_key": "walking_lunge",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1182,
+      "exercise_key": "step_up",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1183,
+      "exercise_key": "lying_leg_curl",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1183,
+      "exercise_key": "seated_leg_curl",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1183,
+      "exercise_key": "nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1184,
+      "exercise_key": "leg_extension",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1184,
+      "exercise_key": "sissy_squat",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1184,
+      "exercise_key": "reverse_nordic_curl",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1185,
+      "exercise_key": "standing_calf",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1185,
+      "exercise_key": "smith_calf_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1185,
+      "exercise_key": "leg_press_calf_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1186,
+      "exercise_key": "hanging_leg_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1186,
+      "exercise_key": "captains_chair_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1186,
+      "exercise_key": "reverse_crunch",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1187,
+      "exercise_key": "seated_db_press",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1187,
+      "exercise_key": "ohp_bb",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1187,
+      "exercise_key": "machine_shoulder_press",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1188,
+      "exercise_key": "lat_pulldown",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1188,
+      "exercise_key": "weighted_pullup",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1188,
+      "exercise_key": "assisted_pullup",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1189,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1189,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1189,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1190,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1190,
+      "exercise_key": "db_rear_delt_fly",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1190,
+      "exercise_key": "cable_reverse_fly",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1191,
+      "exercise_key": "face_pull",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1191,
+      "exercise_key": "reverse_pec_deck",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1191,
+      "exercise_key": "band_pull_apart",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1192,
+      "exercise_key": "bb_shrug",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1192,
+      "exercise_key": "db_shrug",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1192,
+      "exercise_key": "cable_shrug",
+      "option_rank": 3
+    },
+    {
+      "slot_id": 1193,
+      "exercise_key": "machine_lat_raise",
+      "option_rank": 1
+    },
+    {
+      "slot_id": 1193,
+      "exercise_key": "cable_lat_raise",
+      "option_rank": 2
+    },
+    {
+      "slot_id": 1193,
+      "exercise_key": "db_lat_raise",
+      "option_rank": 3
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+[
+  {
+    "workout_id": "PPL_PUSH_A",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Push Day A (Chest Focus)",
+    "day_order": 1,
+    "warmup_notes": "5 min bike or rower. Band pull-aparts 2x20, shoulder dislocates 2x10, scap push-ups 2x10. Ramp the bench with the empty bar, then 3 ascending sets to your first working load.",
+    "session_focus": "Heavy horizontal pressing",
+    "est_session_minutes": 70,
+    "optional_finisher": "Cable fly drop set, 1 set of 15-12-10"
+  },
+  {
+    "workout_id": "PPL_PULL_A",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Pull Day A (Back Thickness)",
+    "day_order": 2,
+    "warmup_notes": "5 min rower. Dead hangs 2x20 sec, band pull-aparts 2x20, prone Y-raises 2x12. Two ramping sets on the row before working weight.",
+    "session_focus": "Horizontal pulling and mid-back thickness",
+    "est_session_minutes": 70,
+    "optional_finisher": "Dead hang for max time, 2 attempts"
+  },
+  {
+    "workout_id": "PPL_LEGS_A",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Leg Day A (Quad Focus)",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, couch stretch 45 sec per side, glute bridges 2x15. Ramp the squat in 3 ascending sets.",
+    "session_focus": "Squat pattern and quadriceps",
+    "est_session_minutes": 75,
+    "optional_finisher": "Leg extension myo-reps, 1 set"
+  },
+  {
+    "workout_id": "PPL_PUSH_B",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Push Day B (Shoulder Focus)",
+    "day_order": 4,
+    "warmup_notes": "5 min bike. Band pull-aparts 2x20, external rotations 2x15 per side, scap push-ups 2x10. Two ramping sets on the overhead press.",
+    "session_focus": "Vertical pressing and lateral deltoid",
+    "est_session_minutes": 70,
+    "optional_finisher": "Lateral raise drop set, 1 set of 20-15-15"
+  },
+  {
+    "workout_id": "PPL_PULL_B",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Pull Day B (Back Width)",
+    "day_order": 5,
+    "warmup_notes": "5 min rower. Dead hangs 2x20 sec, band pull-aparts 2x20, cable straight-arm pulldowns 2x15 light as activation.",
+    "session_focus": "Vertical pulling and lat width",
+    "est_session_minutes": 70,
+    "optional_finisher": "Straight-arm pulldown, 1 set of 25"
+  },
+  {
+    "workout_id": "PPL_LEGS_B",
+    "split_id": "SPLIT_PPL",
+    "day_name": "Leg Day B (Posterior Chain)",
+    "day_order": 6,
+    "warmup_notes": "5 min bike. Hip airplanes 5 per side, glute bridges 2x15, cat-cow 10 reps, light RDL 2x10 with the empty bar before pulling.",
+    "session_focus": "Hip hinge, glutes and hamstrings",
+    "est_session_minutes": 75,
+    "optional_finisher": "Weighted plank, 3 x 30 sec"
+  },
+  {
+    "workout_id": "ARNOLD_CHEST_BACK",
+    "split_id": "SPLIT_ARNOLD",
+    "day_name": "Chest + Back",
+    "day_order": 1,
+    "warmup_notes": "5 min rower. Band pull-aparts 2x20, scap push-ups 2x10, dead hangs 2x20 sec. Ramp both the bench and the pull-up before the first superset.",
+    "session_focus": "Antagonist supersets, chest and back",
+    "est_session_minutes": 85,
+    "optional_finisher": "Dumbbell pullover, 1 set of 20"
+  },
+  {
+    "workout_id": "ARNOLD_SHOULDERS_ARMS",
+    "split_id": "SPLIT_ARNOLD",
+    "day_name": "Shoulders + Arms",
+    "day_order": 2,
+    "warmup_notes": "5 min bike. External rotations 2x15 per side, band pull-aparts 2x20, light lateral raises 2x20 as activation.",
+    "session_focus": "Deltoids and direct arm work",
+    "est_session_minutes": 80,
+    "optional_finisher": "Alternating curl-to-pushdown superset, 2 rounds of 15"
+  },
+  {
+    "workout_id": "ARNOLD_LEGS",
+    "split_id": "SPLIT_ARNOLD",
+    "day_name": "Legs",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, ankle rocks 10 per side, couch stretch 45 sec per side. Squat ramp: bar x10, then 4 ascending sets.",
+    "session_focus": "High-volume lower body",
+    "est_session_minutes": 85,
+    "optional_finisher": "Leg press drop set, 1 set of 20-15-15"
+  },
+  {
+    "workout_id": "UL_UPPER_A",
+    "split_id": "SPLIT_UL",
+    "day_name": "Upper A (Strength Emphasis)",
+    "day_order": 1,
+    "warmup_notes": "5 min rower. Band pull-aparts 2x20, scap push-ups 2x10, dead hangs 2x20 sec. Bench ramp: bar x10, then 3 ascending singles-to-triples to working weight.",
+    "session_focus": "Heavy upper body compounds",
+    "est_session_minutes": 65,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "UL_LOWER_A",
+    "split_id": "SPLIT_UL",
+    "day_name": "Lower A (Strength Emphasis)",
+    "day_order": 2,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, glute bridges 2x15. Squat ramp: bar x10, then 3 ascending sets.",
+    "session_focus": "Heavy squat and hinge",
+    "est_session_minutes": 65,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "UL_UPPER_B",
+    "split_id": "SPLIT_UL",
+    "day_name": "Upper B (Hypertrophy Emphasis)",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Band pull-aparts 2x20, external rotations 2x15 per side, light incline press 2x12 as a feeler set.",
+    "session_focus": "Higher-rep upper body volume",
+    "est_session_minutes": 65,
+    "optional_finisher": "Lateral raise myo-reps, 1 set"
+  },
+  {
+    "workout_id": "UL_LOWER_B",
+    "split_id": "SPLIT_UL",
+    "day_name": "Lower B (Hypertrophy Emphasis)",
+    "day_order": 4,
+    "warmup_notes": "5 min bike. Glute bridges 2x15, leg swings 10 per direction, light leg curls 2x15 as activation.",
+    "session_focus": "Higher-rep lower body volume, glute bias",
+    "est_session_minutes": 65,
+    "optional_finisher": "Seated calf raise, 1 set of 25"
+  },
+  {
+    "workout_id": "AP_ANTERIOR_A",
+    "split_id": "SPLIT_ANTPOST",
+    "day_name": "Anterior Chain A (Quads / Chest / Front Delts)",
+    "day_order": 1,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, band pull-aparts 2x20, scap push-ups 2x10. Ramp both the squat and the bench.",
+    "session_focus": "Front-chain strength",
+    "est_session_minutes": 70,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "AP_POSTERIOR_A",
+    "split_id": "SPLIT_ANTPOST",
+    "day_name": "Posterior Chain A (Hams / Glutes / Back)",
+    "day_order": 2,
+    "warmup_notes": "5 min rower. Cat-cow 10 reps, glute bridges 2x15, hip airplanes 5 per side, dead hangs 2x20 sec. Deadlift ramp: 4 ascending sets from the empty bar.",
+    "session_focus": "Back-chain strength and pulling",
+    "est_session_minutes": 75,
+    "optional_finisher": "45-degree back extension, 1 set of 20"
+  },
+  {
+    "workout_id": "AP_ANTERIOR_B",
+    "split_id": "SPLIT_ANTPOST",
+    "day_name": "Anterior Chain B (Quad Hypertrophy / Upper Push)",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Ankle rocks 10 per side, front rack mobility 2x30 sec, bodyweight squats 2x15, band pull-aparts 2x20.",
+    "session_focus": "Front-chain hypertrophy and unilateral work",
+    "est_session_minutes": 70,
+    "optional_finisher": "Leg extension drop set, 1 set of 20-15-15"
+  },
+  {
+    "workout_id": "AP_POSTERIOR_B",
+    "split_id": "SPLIT_ANTPOST",
+    "day_name": "Posterior Chain B (Glute / Hamstring Hypertrophy)",
+    "day_order": 4,
+    "warmup_notes": "5 min rower. Glute bridges 2x15, hip airplanes 5 per side, light RDL 2x10 with the empty bar, band pull-aparts 2x20.",
+    "session_focus": "Back-chain hypertrophy, glute bias",
+    "est_session_minutes": 70,
+    "optional_finisher": "Face pull, 1 set of 30"
+  },
+  {
+    "workout_id": "FB_DAY_A",
+    "split_id": "SPLIT_FB",
+    "day_name": "Full Body A (Squat + Press Emphasis)",
+    "day_order": 1,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, band pull-aparts 2x20, scap push-ups 2x10. Ramp both the squat and the bench with 2-3 ascending sets each.",
+    "session_focus": "Squat and horizontal press",
+    "est_session_minutes": 60,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "FB_DAY_B",
+    "split_id": "SPLIT_FB",
+    "day_name": "Full Body B (Hinge + Pull Emphasis)",
+    "day_order": 2,
+    "warmup_notes": "5 min rower. Cat-cow 10 reps, glute bridges 2x15, dead hangs 2x20 sec, light trap bar pulls 2x8 before loading.",
+    "session_focus": "Hinge and vertical pull",
+    "est_session_minutes": 60,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "FB_DAY_C",
+    "split_id": "SPLIT_FB",
+    "day_name": "Full Body C (Unilateral + Hypertrophy)",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Hip airplanes 5 per side, couch stretch 45 sec per side, split squat 2x10 bodyweight per leg, band pull-aparts 2x20.",
+    "session_focus": "Unilateral lower body and higher-rep upper",
+    "est_session_minutes": 60,
+    "optional_finisher": "Hanging leg raise, 1 set to failure"
+  },
+  {
+    "workout_id": "HYB_PUSH",
+    "split_id": "SPLIT_HYBRID",
+    "day_name": "Push",
+    "day_order": 1,
+    "warmup_notes": "5 min bike. Band pull-aparts 2x20, scap push-ups 2x10, external rotations 2x15 per side. Bench ramp: bar x10, then 3 ascending sets.",
+    "session_focus": "Heavy pressing, chest and delts",
+    "est_session_minutes": 70,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "HYB_PULL",
+    "split_id": "SPLIT_HYBRID",
+    "day_name": "Pull",
+    "day_order": 2,
+    "warmup_notes": "5 min rower. Dead hangs 2x20 sec, band pull-aparts 2x20, prone Y-raises 2x12.",
+    "session_focus": "Vertical and horizontal pulling, biceps",
+    "est_session_minutes": 70,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "HYB_LEGS",
+    "split_id": "SPLIT_HYBRID",
+    "day_name": "Legs",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, couch stretch 45 sec per side. Squat ramp: 3 ascending sets.",
+    "session_focus": "Squat-led lower body",
+    "est_session_minutes": 70,
+    "optional_finisher": null
+  },
+  {
+    "workout_id": "HYB_UPPER",
+    "split_id": "SPLIT_HYBRID",
+    "day_name": "Upper (Second Exposure)",
+    "day_order": 4,
+    "warmup_notes": "5 min rower. Band pull-aparts 2x20, scap push-ups 2x10, light incline press 2x12 as a feeler set.",
+    "session_focus": "Second weekly upper-body exposure, hypertrophy bias",
+    "est_session_minutes": 70,
+    "optional_finisher": "Lateral raise drop set, 1 set of 20-15-15"
+  },
+  {
+    "workout_id": "HYB_LOWER",
+    "split_id": "SPLIT_HYBRID",
+    "day_name": "Lower (Second Exposure)",
+    "day_order": 5,
+    "warmup_notes": "5 min bike. Glute bridges 2x15, leg swings 10 per direction, light leg curls 2x15 as activation.",
+    "session_focus": "Second weekly lower-body exposure, glute and hamstring bias",
+    "est_session_minutes": 70,
+    "optional_finisher": "Seated calf raise, 1 set of 25"
+  },
+  {
+    "workout_id": "AES_PUSH",
+    "split_id": "SPLIT_AESTHETIC",
+    "day_name": "Push (Chest + Triceps)",
+    "day_order": 1,
+    "warmup_notes": "5 min bike. Band pull-aparts 2x20, scap push-ups 2x10, light incline press 2x12 as a feeler set.",
+    "session_focus": "Upper chest priority and triceps",
+    "est_session_minutes": 70,
+    "optional_finisher": "Cable fly drop set, 1 set of 15-12-10"
+  },
+  {
+    "workout_id": "AES_PULL",
+    "split_id": "SPLIT_AESTHETIC",
+    "day_name": "Pull (Lats + Biceps)",
+    "day_order": 2,
+    "warmup_notes": "5 min rower. Dead hangs 2x20 sec, band pull-aparts 2x20, straight-arm pulldowns 2x15 light as activation.",
+    "session_focus": "Lat width and biceps",
+    "est_session_minutes": 70,
+    "optional_finisher": "Bayesian cable curl, 1 set of 20"
+  },
+  {
+    "workout_id": "AES_LEGS",
+    "split_id": "SPLIT_AESTHETIC",
+    "day_name": "Legs",
+    "day_order": 3,
+    "warmup_notes": "5 min bike. Leg swings 10 per direction, bodyweight squats 2x15, glute bridges 2x15, ankle rocks 10 per side.",
+    "session_focus": "Machine-led lower body hypertrophy",
+    "est_session_minutes": 70,
+    "optional_finisher": "Leg extension myo-reps, 1 set"
+  },
+  {
+    "workout_id": "AES_SHOULDERS_BACK",
+    "split_id": "SPLIT_AESTHETIC",
+    "day_name": "Shoulders + Back (V-Taper Day)",
+    "day_order": 4,
+    "warmup_notes": "5 min rower. External rotations 2x15 per side, band pull-aparts 2x20, light lateral raises 2x20, dead hangs 2x20 sec.",
+    "session_focus": "Side delts, rear delts and lat width",
+    "est_session_minutes": 70,
+    "optional_finisher": "Machine lateral raise myo-reps, 1 set"
+  }
+]

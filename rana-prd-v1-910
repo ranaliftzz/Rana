@@ -1,0 +1,433 @@
+# Rana — Product Requirements Document, v1
+
+**Status:** Approved for build
+**Last updated:** 2026-09-11
+**Repo:** github.com/ranaliftzz/Rana
+**Supersedes:** the relevant sections of `CLAUDE.md` (see §2)
+
+---
+
+## 1. What we're building
+
+A web app that gives a college student a structured training plan and makes following it feel like leveling a character. The user answers a questionnaire one question at a time, sees a projection of who they could become, commits to it, and then trains against a fixed weekly schedule while four stats and a level rise from the work they actually log.
+
+The emotional shape of v1 is one line: **you answered the questions, here's the gap between where you are and where you could be, are you ready to lock in.**
+
+**Audience:** college students, primarily 18–24, training in a campus rec center.
+
+**Not in v1:** AI-generated plans, Google Calendar, nutrition logging, video, cardio programming, native app, social features, equipment tiers.
+
+---
+
+## 2. Decision log — changes since CLAUDE.md
+
+These supersede what's currently written in `CLAUDE.md`. Update that file as part of this build.
+
+| # | Decision | Consequence |
+|---|---|---|
+| D1 | **Equipment access is removed from the product**, not just the questionnaire. | The plan matrix collapses from 4 goals × 3 equipment tiers (12 templates) to **4 goal templates**. See §2.1 — this one has a real cost. |
+| D2 | **No Google Calendar in v1.** | The locked "fixed weekly schedule, missed is missed, never silently rescheduled" decision **stands unchanged**. Calendar remains the long-term goal and the data model should not make it hard to add later. |
+| D3 | **Exercise references use `exercise_key`**, not free-text names. | Requires the library repair in §4 before any feature ships. |
+| D4 | **Calorie and macro targets are display-only.** | Shown once on the results screen as part of the projection. No logging, no daily tracking, no nutrition screen. Guardrails in §11. |
+| D5 | **Questionnaire is one page**, JavaScript swaps which question is visible. | Departs from the multi-page `window.location.href` pattern used so far. |
+| D6 | **Stats rise automatically from logged work.** No spendable points. | The `[+]` buttons and "Available Points" from the reference mockup are cut. |
+| D7 | **Original naming throughout.** The user's own name from the questionnaire is the character name. | No borrowed character names, rank ladders, or system dialogue. See §10.1. |
+
+### 2.1 The cost of removing equipment access — read this
+
+`CLAUDE.md` called equipment tier the key differentiator and said not to drop it. You've dropped it. That's your call to make, but the consequence should be written down rather than discovered later:
+
+**v1 now assumes the user has access to a fully equipped gym.** The workbook splits prescribe hack squats, pec decks, cable stations, T-bar rows and seated calf machines. A student training in a dorm gym with dumbbells and a bench cannot run these plans. For a campus rec center this is usually a safe assumption; for the dorm-gym user it is not.
+
+Two things soften this without reintroducing the question:
+
+1. **Per-exercise swapping stays and gets more important.** Every slot carries alternatives (§5.3). The framing changes from "you don't own this equipment" to "the rack is taken" — still the single most useful feature at 6pm in a college gym.
+2. **The differentiator shifts to schedule-awareness**, which is where Calendar was always headed anyway. Equipment can return later as a profile setting rather than an onboarding question, and the slot/alternative structure means it would slot in without a migration.
+
+---
+
+## 3. Screen inventory and build order
+
+| # | Screen | State today | v1 target |
+|---|---|---|---|
+| 1 | Questionnaire | Built as a single scrolling form | Rebuild as one-question-per-screen |
+| 2 | Results / projection | Does not exist | Build — this is the emotional centerpiece |
+| 3 | Account creation | Built, intentionally inert | Restyle only. Stays inert. |
+| 4 | Dashboard | Built, hardcoded | Rebuild against real plan data |
+| 5 | Session detail | Does not exist | Build |
+| 6 | Active session / logging | Does not exist | Build |
+| 7 | Session complete | Does not exist | Build — carries the level-up moment |
+
+**Build order:** library repair (§4) → storage layer (§6) → 1 → 2 → 4 → 5 → 6 → 7 → 3 restyle.
+
+Storage comes before any screen. Everything below depends on it, and the questionnaire currently throws its answers away.
+
+---
+
+## 4. Prerequisite: exercise library repair
+
+This is real work and it blocks everything. Do it first.
+
+**Current state, validated 2026-09-11:**
+
+- `exercises_master` → `exercise_library` on `exercise_name`: **193/193 rows match. Clean.**
+- `alternative_1` / `alternative_2` → `exercise_library`: **51 of 85 distinct names do not exist in the library.**
+
+The alternatives are the entire swap feature, and today 60% of them point at nothing. They would fail silently.
+
+**Tasks, in order:**
+
+1. **Resolve ~11 alias collisions by hand.** These are names that drifted within the workbook — `Hack Squat` vs `Machine Hack Squat`, `Lat Pulldown` vs `Lat Pulldown (Wide Pronated)`, `Seated Cable Row` vs `Seated Cable Row (Neutral Grip)`, `Incline Barbell Bench Press` vs `Barbell Incline Bench Press`, `Dumbbell Bench Press` vs `Flat Dumbbell Bench Press`, and similar. **Do not fuzzy-match these.** A trial run paired "Decline Dumbbell Fly" with "Incline Dumbbell Curl" with high confidence. A human decides each one.
+2. **Author ~40 new library entries** for exercises that appear only as alternatives: push-ups, goblet squats, band pull-aparts, glute bridges, dumbbell shrugs, EZ-bar curls, Nordic curls, reverse lunges, step-ups, sissy squats and the rest. Each needs the full library schema — movement pattern, primary and secondary muscles, equipment, compound flag, unilateral flag, coaching cue.
+3. **Assign a stable `exercise_key` to every entry.** Slug format, lowercase, underscore-separated: `barbell_bench_press`. Keys never change once assigned, even if the display name does.
+4. **Convert to keyed references.** Replace every `exercise_name`, `alternative_1` and `alternative_2` string with its key.
+5. **Add a validation script that fails loudly.** Every key referenced anywhere must exist in the library. Run it in CI, or at minimum as a pre-commit step. This is the whole reason we chose keys — wire up the check that makes the choice pay off.
+6. **Export to JSON** (§6.1).
+
+Roughly 40 new entries at full schema depth is a few hours of real programming judgment, not a mechanical pass.
+
+---
+
+## 5. Data model
+
+Keep prescription and record separate. This was right in `CLAUDE.md` and stays.
+
+### 5.1 Reference data (static, ships with the app)
+
+```
+exercise
+  exercise_key            PK, slug
+  name                    display
+  movement_pattern
+  muscle_group            rollup for stat attribution
+  target_muscle_primary
+  target_muscle_secondary
+  equipment
+  is_compound             bool
+  is_unilateral           bool
+  coaching_cue
+
+split
+  split_id                PK
+  name, experience_level, days_per_week, primary_goal
+  recommended_schedule, description
+
+workout_day
+  workout_id              PK
+  split_id                FK
+  day_name, day_order, warmup_notes, session_focus
+
+slot                      ← replaces flat exercise instances
+  slot_id                 PK
+  workout_id              FK
+  slot_order
+  movement_pattern
+  working_sets, rep_range, target_rpe, rest_seconds, tempo
+  coaching_cue
+
+slot_option
+  slot_id                 FK
+  exercise_key            FK
+  option_rank             1 = primary, 2 = first alternative, 3 = second
+```
+
+The `slot` / `slot_option` split is the structural change. Today a row in `exercises_master` *is* an exercise. In v1 a slot is a movement-pattern requirement with two or three exercises that satisfy it. That's what makes swapping work and it matches the locked design decision about slots.
+
+### 5.2 User data
+
+```
+profile
+  name, gender, age, height, weight_current, weight_target
+  goal, focus_area, fitness_level, activity_level
+  training_days_per_week, limitations[]
+  created_at
+
+plan
+  split_id                which split was selected
+  training_weekdays[]     e.g. [Mon, Tue, Thu, Fri]
+  start_date
+  status                  active | abandoned
+
+scheduled_session
+  session_id              PK
+  plan_id, workout_id     FK
+  date                    real calendar date
+  status                  upcoming | completed | missed | rest
+
+logged_set
+  session_id, slot_id, exercise_key     FK
+  set_index
+  weight, reps
+  rpe                     optional
+  completed_at
+
+session_feedback
+  session_id              FK
+  difficulty              1–5, single tap at session end
+```
+
+`session_feedback` is one tap. It exists because Recovery (§7.4) needs a real input, and a recovery number with nothing behind it is a lie the user will eventually catch.
+
+### 5.3 Swapping
+
+When a user swaps, write the `exercise_key` they actually used onto the `logged_set`. The slot records what was prescribed; the log records what happened. Working weights are tracked per `exercise_key`, so swapping to the dumbbell version doesn't inherit the barbell's loads.
+
+---
+
+## 6. Storage layer
+
+**v1 is `localStorage`.** Supabase comes later.
+
+Everything goes through one module — `storage.js` — exposing something like `getProfile()`, `savePlan()`, `logSet()`, `getSessionsForWeek()`. **No screen touches `localStorage` directly.** When Supabase arrives, one file changes.
+
+Known limits to design around: localStorage is per-browser and per-device, holds roughly 5MB, and is wiped if the user clears site data. For an MVP that's acceptable — but the results screen should not imply an account is protecting anything, because at this stage nothing is.
+
+### 6.1 Reference data format
+
+Export the workbook to `data/exercises.json`, `data/splits.json`, `data/workouts.json`, `data/slots.json`. Static files loaded with `fetch` at startup. They never change at runtime, never go in localStorage.
+
+One note for local testing: `fetch` against `file://` is blocked by browsers. Once JSON loading exists, the app needs a local server to open — `python3 -m http.server` from the project folder, then visit `localhost:8000`. Double-clicking the HTML file will stop working at that point.
+
+---
+
+## 7. The game system
+
+### 7.1 Stats — what they mean
+
+Four stats, each derived from a distinct, real training quality. Nothing is allocated by the user.
+
+| Stat | Represents | Earned from |
+|---|---|---|
+| **STR** | Maximal force | Completed sets on `is_compound = true` exercises at rep ranges topping out at 8 or below |
+| **AGI** | Control and coordination | Completed sets on `is_unilateral = true` exercises, and any set at 12+ reps |
+| **VIT** | Work capacity | Total completed sets across all sessions, plus posterior-chain and core slots |
+| **INT** | Training discipline | Sessions completed as prescribed: no skipped slots, deloads honored, calibration graduated |
+
+INT is the one that needed defining. It is not trivia knowledge — it's how well you execute the plan. It rises when you finish what was prescribed, including the boring weeks. A user who trains hard but randomly is strong and dumb, and the HUD should say so.
+
+### 7.2 Stat math
+
+Each completed set awards points to one or more stats. Displayed stat value grows sub-linearly so early progress feels fast and later progress feels earned:
+
+```
+stat_value = floor( 4 * sqrt(stat_points) ) + baseline_from_questionnaire
+```
+
+**Stats never decrease.** The questionnaire sets a baseline floor; logged work only adds. This avoids the "your STR dropped" moment when real data contradicts a self-reported estimate, and it's defensible — you do not get weaker by logging a workout.
+
+### 7.3 XP, levels and tiers
+
+**XP is awarded for adherence, not tonnage.** A completed prescribed set is worth the same XP whether it's a heavy week or a deload week. This deliberately solves the problem where the app punishes you for correctly following its own deload prescription.
+
+```
+xp_for_level(n) = round( 80 * n^1.4 )
+```
+
+Level 2 at 80 XP, level 10 at roughly 2,000, level 25 at roughly 7,300. Fast early, slow later.
+
+**Tiers** replace any borrowed rank ladder. Six tiers, banded by level, named to match the stoic register:
+
+```
+DORMANT      Lv 1–4
+AWAKENED     Lv 5–11
+FORGED       Lv 12–20
+RELENTLESS   Lv 21–32
+UNBROKEN     Lv 33–49
+SOVEREIGN    Lv 50+
+```
+
+A tier change is the biggest moment in the app. It gets a full-screen modal; a level-up gets a smaller one.
+
+### 7.4 Recovery
+
+Derived from three real inputs: days since last session, adherence to prescribed rest days, and the one-tap difficulty rating from `session_feedback`.
+
+**If there's no data yet, show `—`, not a number.** A fabricated readiness score in a health context is the fastest way to lose a user's trust permanently.
+
+The separate "Readiness Score" from the reference mockup is **cut**. It duplicated Recovery and needed data we don't collect. One honest meter beats two, one of which is decorative.
+
+### 7.5 Current versus target stats
+
+The results screen (§9) shows two stat blocks side by side.
+
+- **Current** — baseline computed from fitness level, activity level, training days and goal.
+- **Target** — projected value after 12 weeks of full adherence to the selected plan.
+
+Label the target as a projection, in the interface, in plain words. It is a forecast conditional on showing up, not a promise.
+
+---
+
+## 8. Questionnaire
+
+One page. One question fills the screen. JavaScript swaps visibility; answers accumulate in memory and save to storage on completion.
+
+**Requirements:**
+- A progress indicator — this is a genuine sequence, so numbering is warranted here.
+- Back navigation between questions that preserves answers.
+- Browser back button should step back one question, not exit the flow. Use `history.pushState` per question.
+- Selecting an option on a single-choice question advances automatically after a short beat. Text and number entry needs an explicit continue.
+- Validation happens per question, at the point of answering — never a list of errors at the end.
+
+**Questions, in order:**
+
+| # | Question | Type | Drives |
+|---|---|---|---|
+| 1 | What should we call you? | Text | Character name throughout the HUD |
+| 2 | Gender | Male / Female / Prefer not to say | Calorie display, stat baseline |
+| 3 | Age | Number | Calorie display, under-18 flag (§11) |
+| 4 | Height | Number, ft/in or cm | Calorie display |
+| 5 | Current weight | Number | Calorie display, baseline |
+| 6 | Target weight | Number, skippable | Projection framing |
+| 7 | Primary goal | Build muscle / Lose fat / Get stronger / General fitness | **Template selection** |
+| 8 | Focus area | Chest & arms / Back & shoulders / Legs & glutes / Balanced | Split selection within goal |
+| 9 | Fitness level | Never trained / Trained before, returning / Training consistently | Stat baseline, experience gate on splits |
+| 10 | Activity level outside the gym | Mostly sitting / Moderately active / On my feet all day | Calorie display, VIT baseline |
+| 11 | Anything we should work around? | Multi-select + none: knee, shoulder, lower back, wrist | Exercise filtering |
+| 12 | How many days a week can you train? | 3 / 4 / 5 / 6 | **Split selection** |
+| 13 | Which days? | Weekday multi-select, count locked to Q12 | Session scheduling |
+
+**Two changes from your list.** Question 11 (limitations) is new — it's cheap, and prescribing barbell squats to someone with a knee problem is the kind of thing that should be preventable at question time. And the day-count selector starts at 3, not 2: the workbook's lowest split is a 3-day full body, so a 2-day option would have nothing to map to.
+
+**Question 8 needs a decision during build.** Focus area has four options but the workbook has seven splits, and goal already selects among them. Either focus area picks between A/B day variants within a split, or it's advisory only and shown back to the user without driving selection. Don't let it silently do nothing.
+
+---
+
+## 9. Results screen
+
+The emotional centerpiece. Sequenced reveal, not a page that appears all at once.
+
+```
++--------------------------------------------------------------+
+|                                                              |
+|            [ SYSTEM ]                                        |
+|                                                              |
+|            ANALYSIS COMPLETE                                 |
+|                                                              |
+|            ─────────────────────────                         |
+|                                                              |
+|            "Waste no more time arguing what a good           |
+|             man should be. Be one."                          |
+|                                    — Marcus Aurelius         |
+|                                                              |
+|                                                              |
+|            CURRENT              →         PROJECTED          |
+|                                        (12 weeks)            |
+|            STR  12                        STR  31            |
+|            AGI  09                        AGI  24            |
+|            VIT  15                        VIT  38            |
+|            INT  05                        INT  40            |
+|                                                              |
+|            ─────────────────────────                         |
+|                                                              |
+|            ASSIGNED: UPPER / LOWER — 4 DAY                   |
+|            Mon · Tue · Thu · Fri                             |
+|                                                              |
+|            Daily intake target   2,340 kcal                  |
+|            Protein 165g · Carbs 260g · Fat 70g               |
+|            Water   10 cups                                   |
+|                                                              |
+|                                                              |
+|            +--------------------------------------+          |
+|            |     ARE YOU READY TO LOCK IN?        |          |
+|            +--------------------------------------+          |
+|                                                              |
++--------------------------------------------------------------+
+```
+
+**Reveal sequence:** system header types in → quote fades → current stats appear → projected stats animate up from current, one stat at a time → plan assignment → the button. Roughly three seconds total, skippable on tap.
+
+This is the **one orchestrated motion moment in the app**. Everywhere else, motion only responds to user action. Spending it here is the whole point.
+
+Nutrition numbers are display-only per D4. Present them as part of the projection, not as something to track.
+
+---
+
+## 10. Visual design system
+
+The brief pins this down: deep black, neon cyan, sharp angular panels, system-alert modals, RPG stat bars. Follow it exactly.
+
+### 10.1 Naming and IP
+
+The aesthetic is not protectable and you can take it as far as you want. Character names, specific rank ladders and verbatim system dialogue from an existing property are. **The character is the user** — their name from question 1 appears in the HUD header. Tiers are the original six in §7.3. Write original system copy.
+
+**Stoic quotes must use public-domain translations.** Marcus Aurelius via George Long (1862) and the Long/Higginson Epictetus are safe. Modern translations — Hays, Waterfield and similar — are under copyright. Store the quote pool in `data/quotes.json` with the translator recorded for each entry.
+
+Quotes appear in exactly four places: the results reveal, rest days, session complete, and tier-up. Not scattered.
+
+### 10.2 Tokens
+
+```css
+--void:          #04070B;   /* page */
+--panel:         #0A1119;   /* cards */
+--panel-raised:  #101B26;   /* modals, active states */
+--system-cyan:   #3FE9FF;   /* primary accent, glow, active bars */
+--system-blue:   #1B7FFF;   /* bar gradients, secondary */
+--tier-violet:   #A46BFF;   /* tier-up only — the rarest color in the app */
+--text:          #E6F4FA;
+--text-dim:      #6F8598;
+--vitality:      #4ADE80;   /* recovery meter */
+--breach:        #FF4D5E;   /* missed session */
+```
+
+Violet appears only on tier-up. A color the user sees three times a year carries more weight than one used for decoration.
+
+### 10.3 Type
+
+- **Display / HUD:** Chakra Petch — angular, squared terminals, built for this register without being the obvious sci-fi default.
+- **Body / data:** Inter, with `font-variant-numeric: tabular-nums` on every stat readout, weight entry and set counter.
+
+Tabular figures because columns of numbers must align when they change. That's a functional requirement, not a stylistic one — so it applies to numeric readouts only, not to labels.
+
+### 10.4 Geometry
+
+**Zero border-radius anywhere in the app.** Panels use notched corners via `clip-path`:
+
+```css
+clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+```
+
+Borders are 1px `--system-cyan` at 25% opacity, rising to 60% with an outer glow on active or focused elements. Glow comes from `box-shadow`, never from blur filters — blur on a full-screen dark layout is a performance problem on the phones students actually carry.
+
+### 10.5 Stat bars
+
+Segmented, not continuous. Twenty discrete blocks per bar, filled left to right. Segments read as a quantity you can count; a smooth gradient bar reads as decoration.
+
+### 10.6 Quality floor
+
+Responsive to 360px. Visible keyboard focus on every interactive element — the cyan glow doubles as the focus ring. `prefers-reduced-motion` disables the results reveal and shows the final state immediately. Contrast: `--text-dim` on `--panel` must clear 4.5:1, so verify it and lighten if it doesn't.
+
+---
+
+## 11. Safety guardrails
+
+Non-negotiable, and cheap to build.
+
+1. **Calorie floor.** The displayed number is never below 1,500 for men or 1,200 for women regardless of what the inputs produce. If the calculation goes lower, clamp it and show the clamped value.
+2. **Rate cap.** Any implied rate of weight change is capped at roughly 1% of bodyweight per week. If the current-to-target gap implies faster, extend the timeline rather than raising the deficit.
+3. **Target weight is skippable.** Question 6 has a skip. If skipped, the projection is framed entirely around stats and performance.
+4. **No streak or level loss tied to weight or eating.** XP and stats come from training only. Nothing in the game layer punishes a body-weight number.
+5. **Stats never decrease** (§7.2). The game layer only ever adds.
+6. **Limitations are respected.** Question 11's answers filter exercise options. A user who flags knees should not be prescribed barbell squats as an unswappable primary.
+7. **Medical disclaimer** on the results screen and in account creation. Plain language, not buried.
+8. **Under-18 handling is an open question** (§13). Until it's answered, the build should capture age and store it, but not branch on it.
+
+---
+
+## 12. Out of scope for v1
+
+Named explicitly so they don't creep in: Google Calendar, nutrition logging, AI plan generation, exercise video, cardio programming, native app, social or leaderboard features, equipment tiers, real authentication, cross-device sync, notifications.
+
+---
+
+## 13. Open questions
+
+1. **Under-18 users.** In scope or gated out? Affects the calorie display and what obligations attach to the account screen. Needs an answer before the results screen is considered done.
+2. **Focus area's actual function** (§8, question 8). Selects A/B variants, or advisory only?
+3. **Calibration graduation and INT.** `CLAUDE.md` specifies calibration graduating per movement pattern at roughly 3 logged sessions. INT rewards graduation. Confirm this stays in v1, since it's the only mechanic that makes INT move early.
+4. **Session length.** Not currently asked, but the workbook's splits range from 60 to 85 minutes and an 85-minute session is a hard sell between classes. Worth adding as question 14, or accepting that goal selection implies it.
+
+---
+
+## 14. Definition of done for v1
+
+A user can open the app on a phone, answer thirteen questions one at a time, see their current and projected stats with a plan assigned, tap through a dummy account screen, land on a dashboard showing today's session against a real fixed schedule, open that session, log actual sets with weights and reps, swap an exercise when a machine is taken, finish the session, watch their stats and XP move as a result — and come back the next day to find all of it still there.
