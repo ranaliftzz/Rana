@@ -243,13 +243,8 @@ fieldset label input[type="checkbox"] {
   color: var(--breach);
 }
 
-/* ---- HUD header: name + level/tier, shared by dashboard and session screens ---- */
-
-.hud-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
+/* ---- HUD name/tier: shared by the dashboard's vitals bar and the session
+   screens' small headers. Kept exactly as-is — other screens depend on it. ---- */
 
 .hud-name {
   margin: 0;
@@ -263,28 +258,8 @@ fieldset label input[type="checkbox"] {
   color: var(--system-cyan);
 }
 
-.hud-level {
-  font-family: var(--font-display);
-}
-
-.dashboard-date {
-  margin: 0 0 4px;
-  color: var(--text-dim);
-  font-size: 0.9rem;
-}
-
-/* ---- Today's workout card ---- */
-
-.today-card {
-  background-color: var(--panel);
-  border: 1px solid rgba(63, 233, 255, 0.4);
-  clip-path: polygon(
-    var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)),
-    calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch)
-  );
-  padding: 28px 24px;
-  text-align: center;
-}
+/* ---- Small uppercase caption, shared across screens (session date/day
+   labels, plan-assignment name, etc.) — kept as-is, other screens depend on it. ---- */
 
 .today-eyebrow {
   margin: 0;
@@ -294,111 +269,10 @@ fieldset label input[type="checkbox"] {
   color: var(--text-dim);
 }
 
-.today-type {
-  margin: 8px 0 20px;
-  font-size: 1.8rem;
-}
-
-.today-start {
-  box-shadow: 0 0 20px rgba(63, 233, 255, 0.25);
-}
-
-.today-rest-note {
-  display: none;
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-  color: var(--text-dim);
-}
-
-.today-card[data-state="rest"] {
-  border-color: rgba(63, 233, 255, 0.15);
-}
-
-.today-card[data-state="rest"] .today-start {
-  display: none;
-}
-
-.today-card[data-state="rest"] .today-rest-note {
-  display: block;
-}
-
-/* ---- Weekly strip ---- */
-
-.week-strip {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-
-.week-day {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 2px;
-  font-size: 0.8rem;
-}
-
-.week-day-label {
-  color: var(--text-dim);
-}
-
-.week-day::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background-color: rgba(111, 133, 152, 0.4);
-}
-
-.week-day[data-state="completed"]::after {
-  background-color: var(--system-cyan);
-}
-
-.week-day[data-state="missed"]::after {
-  background-color: var(--breach);
-}
-
-.week-day[data-state="upcoming"]::after,
-.week-day[data-state="not-started"]::after {
-  background-color: transparent;
-  border: 1.5px solid var(--system-cyan);
-}
-
-.week-day[data-state="not-started"] {
-  opacity: 0.5;
-}
-
-.week-day[data-state="today"] {
-  border: 1px solid var(--system-cyan);
-  box-shadow: 0 0 10px rgba(63, 233, 255, 0.3);
-}
-
-.week-day[data-state="today"]::after {
-  background-color: var(--system-cyan);
-}
-
-.week-day[data-state="rest"] {
-  color: var(--text-dim);
-}
-
-.week-day[data-state="rest"] .week-day-label {
-  color: var(--text-dim);
-}
-
-.week-day[data-state="rest"]::after {
-  content: "Rest";
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  font-size: 0.65rem;
-  color: var(--text-dim);
-}
-
-/* ---- Stat bars: segmented (20 discrete blocks), not a smooth gradient ---- */
+/* ---- Stat bars: segmented (20 discrete blocks), not a smooth gradient.
+   Shared by the results screen and the dashboard's status matrix / vitals
+   meters — the same building block renders "current vs. target", XP, and
+   recovery, just with different fill colors via modifier classes below. ---- */
 
 .stat-row {
   display: grid;
@@ -430,6 +304,10 @@ fieldset label input[type="checkbox"] {
 
 .stat-bar.projected span.filled {
   background-color: var(--system-blue);
+}
+
+.stat-bar--recovery span.filled {
+  background-color: var(--vitality);
 }
 
 .stat-value {
@@ -725,16 +603,311 @@ fieldset label input[type="checkbox"] {
   text-align: center;
 }
 
-/* ---- Demo/dev-only scaffolding ---- */
+/* ---- Dashboard: vitals bar (persistent chrome, pinned to the top) ---- */
 
-.demo-toggle {
-  align-self: center;
-  background: none;
-  border: 1px dashed var(--text-dim);
-  padding: 6px 12px;
-  font-size: 0.8rem;
+.vitals {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  row-gap: 10px;
+  padding: 12px 16px;
+  background-color: var(--panel);
+  border: 1px solid rgba(63, 233, 255, 0.22);
+  border-left: 2px solid var(--system-cyan);
+}
+
+.vitals-id {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vitals-name {
+  font-size: 1.05rem;
+}
+
+.vitals-meter {
+  flex: 1 1 160px;
+  min-width: 140px;
+}
+
+.vitals-meter--recovery {
+  flex: 0 1 180px;
+}
+
+.vitals-meter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.vitals-meter-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--text-dim);
-  cursor: pointer;
+}
+
+.vitals-meter-value {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.vitals-level {
+  text-align: right;
+}
+
+.vitals-level-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+/* ---- Dashboard layout: two columns above 760px (the mockup's own
+   breakpoint), one column below ---- */
+
+.dashboard-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 14px;
+  align-items: start;
+}
+
+.dashboard-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 760px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Session card: left-aligned; the day name is the largest text on
+   the page (design requirement — no "Welcome back" greeting anywhere). ---- */
+
+.session-card {
+  padding: 22px 24px 24px;
+}
+
+.session-day {
+  margin: 10px 0 6px;
+  font-size: 2.4rem;
+  line-height: 1.05;
+}
+
+.session-focus {
+  margin: 0 0 20px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.session-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-bottom: 20px;
+  background-color: rgba(63, 233, 255, 0.14);
+  border: 1px solid rgba(63, 233, 255, 0.14);
+}
+
+.session-meta div {
+  padding: 11px 12px;
+  background-color: var(--panel);
+}
+
+.session-meta .num {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+}
+
+.session-yield {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.chip {
+  padding: 4px 9px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(63, 233, 255, 0.4);
+  color: var(--system-cyan);
+}
+
+/* ---- Status matrix: current stat measured against the 12-week target,
+   never progress to the next level ---- */
+
+.status-matrix h2 {
+  margin-bottom: 16px;
+}
+
+.stat-matrix-row {
+  margin-bottom: 15px;
+}
+
+.stat-matrix-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-matrix-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+}
+
+.stat-matrix-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+}
+
+.stat-matrix-values {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.stat-matrix-arrow {
+  margin: 0 5px;
+  color: rgba(111, 133, 152, 0.6);
+}
+
+.stat-matrix-target {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ---- Microcycle: ONE cell shape for all seven days. State is carried by
+   border color and marker fill only — never a swapped-in word, so the row
+   stays scannable at a glance. ---- */
+
+.microcycle h2 {
+  margin-bottom: 16px;
+}
+
+.microcycle-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.microcycle-day {
+  padding: 9px 2px 10px;
+  background-color: #070d13;
+  border: 1px solid #16242f;
+}
+
+.microcycle-day-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.microcycle-day-marker {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 7px auto 6px;
+  background-color: #1b2a38;
+}
+
+.microcycle-day-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: #3e5568;
+}
+
+/* "planned" (upcoming, or a training weekday before the plan's own
+   start_date) uses the unmodified cell above — nothing further needed. */
+
+.microcycle-day[data-state="done"] {
+  border-color: rgba(74, 222, 128, 0.4);
+}
+.microcycle-day[data-state="done"] .microcycle-day-marker {
+  background-color: var(--vitality);
+}
+.microcycle-day[data-state="done"] .microcycle-day-label {
+  color: var(--vitality);
+}
+
+.microcycle-day[data-state="today"] {
+  background-color: #0c1a22;
+  border-color: var(--system-cyan);
+}
+.microcycle-day[data-state="today"] .microcycle-day-marker {
+  background-color: var(--system-cyan);
+}
+.microcycle-day[data-state="today"] .microcycle-day-name,
+.microcycle-day[data-state="today"] .microcycle-day-label {
+  color: var(--system-cyan);
+}
+
+.microcycle-day[data-state="missed"] {
+  border-color: rgba(255, 77, 94, 0.35);
+}
+.microcycle-day[data-state="missed"] .microcycle-day-marker {
+  background-color: var(--breach);
+}
+.microcycle-day[data-state="missed"] .microcycle-day-label {
+  color: var(--breach);
+}
+
+.microcycle-day[data-state="rest"] .microcycle-day-marker {
+  background-color: transparent;
+  border: 1px solid #26394a;
+}
+
+/* ---- Dashboard footer ---- */
+
+.dashboard-footer {
+  display: flex;
+  margin-top: 14px;
+  border: 1px solid rgba(63, 233, 255, 0.18);
+}
+
+.dashboard-footer div {
+  flex: 1;
+  padding: 12px 14px;
+  background-color: var(--panel);
+  border-right: 1px solid rgba(63, 233, 255, 0.14);
+}
+
+.dashboard-footer div:last-child {
+  border-right: 0;
+}
+
+.dashboard-footer .num {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.1rem;
+  font-family: var(--font-display);
 }
 
 /* ---- Wider screens (small tablets and up) ---- */

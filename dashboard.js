@@ -1,90 +1,148 @@
-// Dashboard screen, rebuilt against real stored data (PRD section 3).
-// Replaces the old hardcoded placeholder version and its demo toggle —
-// everything below reads from Rana.storage / Rana.data / Rana.plan / Rana.game.
+// Dashboard, rebuilt against design/rana-dashboard-mockup.html (PRD §7, §10).
+// Renders purely from Rana.storage.getDashboardState() — this file never
+// touches localStorage, and never calls Rana.data/Rana.plan/Rana.game
+// directly for data; js/storage.js already assembled everything into one
+// plain object shaped for rendering. (Rana.plan.todayStr() below is the one
+// exception — it's a pure date-formatting helper, not a data read.)
+
+const SEGMENTS = 20; // verified legible at 390px — see CLAUDE.md if that changes
+
+function renderSegments(container, filledCount, total = SEGMENTS) {
+  container.innerHTML = "";
+  const clamped = Math.max(0, Math.min(total, Math.round(filledCount)));
+  for (let i = 0; i < total; i++) {
+    const span = document.createElement("span");
+    if (i < clamped) span.classList.add("filled");
+    container.appendChild(span);
+  }
+}
+
+function segmentsFor(value, max) {
+  if (!max) return 0;
+  return (value / max) * SEGMENTS;
+}
 
 async function main() {
-  const profile = Rana.storage.getProfile();
-  const plan = Rana.storage.getPlan();
+  const state = await Rana.storage.getDashboardState();
 
-  if (!profile || !plan) {
-    window.location.href = "onboarding.html";
-    return;
-  }
-  if (plan.status !== "active") {
-    // Questionnaire finished but the results screen's "lock in" step didn't
-    // happen yet — send them back to finish that, not into a dashboard for
-    // a plan that was never actually confirmed.
-    window.location.href = "results.html";
-    return;
-  }
+  // --- Vitals bar (persistent chrome, pinned via CSS position: sticky) ---
+  document.getElementById("vitals-name").textContent = state.name;
+  document.getElementById("vitals-tier").textContent = state.tier;
+  document.getElementById("level-text").textContent = `LV ${state.level}`;
 
-  const data = await Rana.data.load();
-  const allLoggedSets = Rana.storage.getAllLoggedSets();
+  document.getElementById("xp-text").textContent =
+    `${state.xp} / ${state.xpNeed} XP TO LV ${state.level + 1}`;
+  renderSegments(document.getElementById("xp-bar"), segmentsFor(state.xp, state.xpNeed));
 
-  // --- Header: date, name, level/tier ---
-  const today = new Date();
-  document.getElementById("dashboard-date").textContent = today.toLocaleDateString(undefined, {
-    weekday: "long", month: "long", day: "numeric",
-  });
-  document.getElementById("dashboard-greeting").textContent = `Welcome back, ${profile.name}`;
-
-  const slotsBySlotId = new Map(data.slots.map((s) => [s.slot_id, s]));
-  const xp = Rana.game.totalXp(allLoggedSets, slotsBySlotId);
-  const level = Rana.game.levelForXp(xp);
-  const tier = Rana.game.tierForLevel(level);
-  document.getElementById("dashboard-tier").textContent = tier;
-  document.getElementById("dashboard-level").textContent = `LV ${level}`;
-
-  // --- Today's workout card ---
-  const todayStr = Rana.plan.todayStr();
-  const loggedToday = Rana.storage.getLoggedSetsForDate(todayStr);
-  const todaySession = Rana.plan.getSessionForDate(todayStr, plan, data, loggedToday);
-
-  const todayCard = document.getElementById("today-card");
-  const todayType = document.getElementById("today-type");
-  const todayStart = document.getElementById("today-start");
-  const todayRestNote = document.getElementById("today-rest-note");
-
-  if (todaySession.isRestDay) {
-    todayCard.dataset.state = "rest";
-    const quotes = await fetch("data/quotes.json").then((r) => r.json());
-    const restQuotes = quotes.filter((q) => q.context.includes("rest"));
-    const quote = restQuotes[Math.floor(Math.random() * restQuotes.length)];
-    todayType.textContent = "Rest day";
-    todayRestNote.textContent = `"${quote.text}" — ${quote.author}`;
+  const recoveryText = document.getElementById("recovery-text");
+  const recoveryBar = document.getElementById("recovery-bar");
+  if (state.recovery === null) {
+    // Never a placeholder percentage, never 100%, never a guess.
+    recoveryText.textContent = "— NO DATA";
+    recoveryText.classList.add("vitals-meter-value--dash");
+    renderSegments(recoveryBar, 0);
   } else {
-    todayCard.dataset.state = "training";
-    todayType.textContent = todaySession.workout.day_name;
-    todayStart.textContent = todaySession.status === "completed" ? "View session" : "Start workout";
-    todayStart.addEventListener("click", () => {
-      window.location.href = `session-detail.html?date=${todayStr}`;
+    recoveryText.textContent = `${state.recovery}%`;
+    recoveryText.classList.remove("vitals-meter-value--dash");
+    recoveryBar.classList.add("stat-bar--recovery");
+    renderSegments(recoveryBar, segmentsFor(state.recovery, 100));
+  }
+
+  // --- Session card ---
+  const today = state.today;
+  const cta = document.getElementById("session-cta");
+  const restNote = document.getElementById("rest-note");
+  const sessionMeta = document.getElementById("session-meta");
+  const sessionYield = document.getElementById("session-yield");
+
+  if (today.isRestDay) {
+    // Rest days are prescribed and non-overridable — no start affordance
+    // at all, not even a disabled one (locked design decision #1).
+    document.getElementById("session-label").textContent = "Today";
+    document.getElementById("session-day").textContent = "Rest day";
+    document.getElementById("session-focus").textContent = "";
+    sessionMeta.hidden = true;
+    sessionYield.hidden = true;
+    cta.hidden = true;
+    restNote.hidden = false;
+
+    fetch("data/quotes.json")
+      .then((r) => r.json())
+      .then((quotes) => {
+        const restQuotes = quotes.filter((q) => q.context.includes("rest"));
+        const quote = restQuotes[Math.floor(Math.random() * restQuotes.length)];
+        restNote.textContent = `"${quote.text}" — ${quote.author}`;
+      })
+      .catch(() => {
+        restNote.textContent = "Rest days are part of the plan.";
+      });
+  } else {
+    document.getElementById("session-label").textContent = "Today";
+    document.getElementById("session-day").textContent = today.dayName;
+    document.getElementById("session-focus").textContent = today.focusMuscles;
+    document.getElementById("meta-slots").textContent = today.slotCount;
+    document.getElementById("meta-sets").textContent = today.workingSets;
+    document.getElementById("meta-time").textContent = `${today.estMinutes}m`;
+
+    const chipsEl = document.getElementById("yield-chips");
+    chipsEl.innerHTML = "";
+    today.statYield.forEach((stat) => {
+      const chip = document.createElement("span");
+      chip.className = "chip";
+      chip.textContent = `+${stat}`;
+      chipsEl.appendChild(chip);
+    });
+
+    cta.hidden = false;
+    cta.textContent = today.completed ? "View session" : "Start session";
+    cta.addEventListener("click", () => {
+      window.location.href = `session-detail.html?date=${Rana.plan.todayStr()}`;
     });
   }
 
-  // --- Week strip: the calendar week (Mon-Sun) containing today ---
+  // --- Status matrix: current vs. 12-week target, not progress to next level ---
+  const statRows = document.getElementById("stat-rows");
+  statRows.innerHTML = "";
+  state.stats.forEach((stat) => {
+    const row = document.createElement("div");
+    row.className = "stat-matrix-row";
+
+    const head = document.createElement("div");
+    head.className = "stat-matrix-head";
+    head.innerHTML =
+      `<span class="stat-matrix-name">${stat.key}</span>` +
+      `<span class="stat-matrix-values"><span class="num">${stat.current}</span>` +
+      `<span class="stat-matrix-arrow">&rarr;</span>` +
+      `<span class="num stat-matrix-target">${stat.target}</span></span>`;
+    row.appendChild(head);
+
+    const bar = document.createElement("div");
+    bar.className = "stat-bar projected";
+    row.appendChild(bar);
+
+    statRows.appendChild(row);
+    renderSegments(bar, segmentsFor(stat.current, stat.target));
+  });
+
+  // --- Microcycle: one cell shape for all seven days, state via border/marker only ---
+  document.getElementById("week-number").textContent = `week ${state.weekNumber}`;
   const weekStrip = document.getElementById("week-strip");
   weekStrip.innerHTML = "";
+  state.week.forEach((day) => {
+    const cell = document.createElement("div");
+    cell.className = "microcycle-day";
+    cell.dataset.state = day.state;
+    cell.innerHTML =
+      `<span class="microcycle-day-name">${day.weekday}</span>` +
+      `<span class="microcycle-day-marker"></span>` +
+      `<span class="microcycle-day-label">${day.state === "rest" ? "REST" : day.label}</span>`;
+    weekStrip.appendChild(cell);
+  });
 
-  const dayOfWeekMonFirst = (today.getDay() + 6) % 7; // 0 = Monday
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - dayOfWeekMonFirst);
-
-  for (let i = 0; i < 7; i++) {
-    const date = new Date(monday);
-    date.setDate(monday.getDate() + i);
-    const dateStr = Rana.plan.toDateStr(date);
-    const loggedForDay = Rana.storage.getLoggedSetsForDate(dateStr);
-    const daySession = Rana.plan.getSessionForDate(dateStr, plan, data, loggedForDay);
-
-    const li = document.createElement("li");
-    li.className = "week-day";
-    li.dataset.state = daySession.status;
-    const label = document.createElement("span");
-    label.className = "week-day-label";
-    label.textContent = daySession.weekday;
-    li.appendChild(label);
-    weekStrip.appendChild(li);
-  }
+  // --- Footer ---
+  document.getElementById("footer-consistency").textContent = `${state.consistencyDays} days`;
+  document.getElementById("footer-logged").textContent = state.sessionsLogged;
+  document.getElementById("footer-next").textContent = state.nextTier;
 }
 
 main();

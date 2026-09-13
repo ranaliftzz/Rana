@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rana — tactical dashboard mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#04070B; --panel:#0A1119; --raised:#101B26;
+  --cyan:#3FE9FF; --blue:#1B7FFF; --violet:#A46BFF;
+  --text:#E6F4FA; --dim:#6F8598; --vit:#4ADE80; --breach:#FF4D5E;
+  --notch:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+body{
+  background:var(--void); color:var(--text);
+  font-family:Inter,system-ui,sans-serif; font-size:14px;
+  padding:32px 20px 80px; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto}
+
+/* ---------- mockup chrome (not part of the app) ---------- */
+.note{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
+  font-family:'Chakra Petch',sans-serif;margin:48px 0 12px;border-bottom:1px solid #1B2A38;padding-bottom:8px}
+.note:first-of-type{margin-top:0}
+.toggle{display:flex;gap:0;margin-bottom:20px;border:1px solid #1B2A38;width:max-content}
+.toggle button{background:transparent;border:0;color:var(--dim);font-family:'Chakra Petch',sans-serif;
+  font-size:12px;letter-spacing:.1em;padding:9px 18px;cursor:pointer;text-transform:uppercase}
+.toggle button.on{background:var(--cyan);color:#02141A;font-weight:600}
+
+/* ---------- shared HUD primitives ---------- */
+.notched{
+  background:var(--panel); border:1px solid rgba(63,233,255,.22);
+  clip-path:polygon(var(--notch) 0,100% 0,100% calc(100% - var(--notch)),calc(100% - var(--notch)) 100%,0 100%,0 var(--notch));
+}
+.lbl{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim)}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+
+/* top vitals bar */
+.vitals{display:flex;align-items:center;gap:20px;padding:12px 16px;
+  background:var(--panel);border:1px solid rgba(63,233,255,.22);border-left:2px solid var(--cyan)}
+.ident{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em}
+.tier{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.2em;color:var(--cyan)}
+.vbar{flex:1;min-width:0}
+.vrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.seg{display:flex;gap:2px;height:9px}
+.seg i{flex:1;background:#16242F;display:block}
+.seg i.f{background:var(--cyan)}
+.seg i.v{background:var(--vit)}
+.seg.dim i.f{background:var(--blue)}
+
+/* layout */
+.grid{display:grid;grid-template-columns:1fr 340px;gap:14px;margin-top:14px;align-items:start}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+/* session card */
+.session{padding:22px 24px 24px;position:relative}
+.session .day{font-family:'Chakra Petch',sans-serif;font-size:46px;font-weight:700;
+  line-height:1;letter-spacing:.01em;margin:10px 0 6px}
+.session .focus{color:var(--dim);font-size:13px;margin-bottom:20px}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(63,233,255,.14);
+  border:1px solid rgba(63,233,255,.14);margin-bottom:20px}
+.meta div{background:var(--panel);padding:11px 12px}
+.meta .num{font-size:20px;display:block;margin-top:3px;font-family:'Chakra Petch',sans-serif}
+.yield{display:flex;gap:8px;align-items:center;margin-bottom:22px}
+.chip{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.1em;padding:4px 9px;
+  border:1px solid rgba(63,233,255,.4);color:var(--cyan)}
+.cta{display:block;width:100%;text-align:center;background:var(--cyan);color:#02141A;
+  font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;
+  padding:16px;border:0;cursor:pointer;text-transform:uppercase;
+  clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
+
+/* status matrix */
+.matrix{padding:18px 18px 20px}
+.matrix h3,.cycle h3{margin-bottom:16px}
+.stat{margin-bottom:15px}
+.stat:last-child{margin-bottom:0}
+.srow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;
+  font-family:'Chakra Petch',sans-serif}
+.sname{font-size:12px;letter-spacing:.18em}
+.scur{font-size:19px;font-weight:700}
+.star{font-size:12px;color:var(--dim)}
+.arrow{color:#2C4356;margin:0 5px}
+
+/* microcycle */
+.cycle{padding:18px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.d{padding:9px 2px 10px;border:1px solid #16242F;background:#070D13}
+.d .dn{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.06em;color:var(--dim)}
+.d .mk{height:8px;margin:7px auto 6px;width:8px;background:#1B2A38}
+.d .tg{font-family:'Chakra Petch',sans-serif;font-size:9px;letter-spacing:.06em;color:#3E5568}
+.d.done{border-color:rgba(74,222,128,.4)} .d.done .mk{background:var(--vit)} .d.done .tg{color:var(--vit)}
+.d.today{border-color:var(--cyan);background:#0C1A22}
+.d.today .mk{background:var(--cyan)} .d.today .dn,.d.today .tg{color:var(--cyan)}
+.d.miss{border-color:rgba(255,77,94,.35)} .d.miss .mk{background:var(--breach)} .d.miss .tg{color:var(--breach)}
+.d.rest .mk{background:transparent;border:1px solid #26394A}
+
+.foot{display:flex;gap:0;margin-top:14px;border:1px solid rgba(63,233,255,.18)}
+.foot div{flex:1;padding:12px 14px;border-right:1px solid rgba(63,233,255,.14);background:var(--panel)}
+.foot div:last-child{border-right:0}
+.foot .num{font-size:19px;font-family:'Chakra Petch',sans-serif;display:block;margin-top:3px}
+.dash{color:#2C4356}
+
+.phone{max-width:390px;margin:0 auto;border:1px solid #1B2A38;padding:14px;background:#02050A}
+.phone .grid{grid-template-columns:1fr}
+.phone .session .day{font-size:38px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="toggle">
+  <button id="b1" class="on">Day 1 — nothing logged</button>
+  <button id="b40">Day 40 — mid-plan</button>
+</div>
+
+<p class="note">Desktop / wide</p>
+
+<div class="vitals">
+  <div>
+    <div class="ident" id="ident">RANA</div>
+    <div class="tier" id="tier">DORMANT</div>
+  </div>
+  <div class="vbar">
+    <div class="vrow"><span class="lbl">Workload</span><span class="lbl num" id="xptxt">0 / 80 XP TO LV 2</span></div>
+    <div class="seg" id="xpseg"></div>
+  </div>
+  <div class="vbar" style="max-width:190px">
+    <div class="vrow"><span class="lbl">Recovery</span><span class="lbl num" id="rectxt">—</span></div>
+    <div class="seg" id="recseg"></div>
+  </div>
+  <div style="text-align:right">
+    <div class="lbl">Level</div>
+    <div class="ident num" id="lvl" style="font-size:26px;line-height:1.1">1</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="notched session">
+    <span class="lbl" id="sesslbl">Today · Friday 11 Sep · Session 1</span>
+    <div class="day">Legs</div>
+    <div class="focus">Quadriceps · Hamstrings · Glutes · Calves</div>
+    <div class="meta">
+      <div><span class="lbl">Slots</span><span class="num">6</span></div>
+      <div><span class="lbl">Working sets</span><span class="num">20</span></div>
+      <div><span class="lbl">Est. time</span><span class="num">75m</span></div>
+    </div>
+    <div class="yield">
+      <span class="lbl">Stat yield</span>
+      <span class="chip">+STR</span><span class="chip">+VIT</span>
+    </div>
+    <button class="cta">Start session</button>
+  </div>
+
+  <div>
+    <div class="notched matrix">
+      <h3 class="lbl">Status matrix</h3>
+      <div id="stats"></div>
+    </div>
+
+    <div class="notched cycle" style="margin-top:14px">
+      <h3 class="lbl">Microcycle · <span id="wk">week 1</span></h3>
+      <div class="week" id="week"></div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <div><span class="lbl">Consistency</span><span class="num" id="consist">0 days</span></div>
+  <div><span class="lbl">Sessions logged</span><span class="num" id="logged">0</span></div>
+  <div><span class="lbl">Next tier</span><span class="num" id="next">Awakened · LV 5</span></div>
+</div>
+
+<p class="note">Mobile · 390px — same data, single column</p>
+<div class="phone">
+  <div class="vitals" style="padding:10px 12px;gap:12px">
+    <div>
+      <div class="ident" style="font-size:15px">RANA</div>
+      <div class="tier" style="font-size:10px" id="tier2">DORMANT</div>
+    </div>
+    <div class="vbar">
+      <div class="vrow"><span class="lbl">LV <span class="num" id="lvl2">1</span></span><span class="lbl num" id="xptxt2">0/80</span></div>
+      <div class="seg" id="xpseg2"></div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="notched session" style="padding:18px">
+      <span class="lbl">Today · Session 1</span>
+      <div class="day">Legs</div>
+      <div class="focus">Quads · Hams · Glutes · Calves</div>
+      <div class="meta">
+        <div><span class="lbl">Slots</span><span class="num">6</span></div>
+        <div><span class="lbl">Sets</span><span class="num">20</span></div>
+        <div><span class="lbl">Time</span><span class="num">75m</span></div>
+      </div>
+      <button class="cta" style="font-size:14px;padding:14px">Start session</button>
+    </div>
+    <div class="notched matrix" style="padding:16px"><h3 class="lbl">Status matrix</h3><div id="stats2"></div></div>
+    <div class="notched cycle" style="padding:16px"><h3 class="lbl">Microcycle</h3><div class="week" id="week2"></div></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+var DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+var STATES={
+  d1:{lvl:1,tier:'DORMANT',xp:0,xpNeed:80,rec:null,consist:'0 days',logged:'0',next:'Awakened · LV 5',wk:'week 1',
+      stats:[['STR',12,31],['AGI',9,24],['VIT',15,38],['INT',5,40]],
+      week:[['rest',''],['today','LEGS'],['rest',''],['plan','PUSH'],['plan','PULL'],['rest',''],['rest','']]},
+  d40:{lvl:9,tier:'AWAKENED',xp:1180,xpNeed:1710,rec:82,consist:'12 days',logged:'23',next:'Forged · LV 12',wk:'week 6',
+      stats:[['STR',24,31],['AGI',17,24],['VIT',29,38],['INT',22,40]],
+      week:[['done','PUSH'],['done','PULL'],['rest',''],['miss','LEGS'],['today','LEGS'],['rest',''],['rest','']]}
+};
+function seg(el,pct,cls){el.innerHTML='';var n=20,f=Math.round(n*pct/100);
+  for(var i=0;i<n;i++){var s=document.createElement('i');if(i<f)s.className=cls||'f';el.appendChild(s);}}
+function statRow(n,cur,tar){
+  var pct=Math.round(cur/tar*100);
+  var d=document.createElement('div');d.className='stat';
+  d.innerHTML='<div class="srow"><span class="sname">'+n+'</span>'+
+    '<span><span class="scur num">'+cur+'</span><span class="arrow">→</span>'+
+    '<span class="star num">'+tar+'</span></span></div>'+
+    '<div class="seg dim"></div>';
+  seg(d.querySelector('.seg'),pct);return d;
+}
+function dayCell(state,tag,name){
+  var d=document.createElement('div');
+  d.className='d '+(state==='plan'?'':state)+(state==='rest'?' rest':'');
+  d.innerHTML='<div class="dn">'+name+'</div><div class="mk"></div><div class="tg">'+(tag||'REST')+'</div>';
+  return d;
+}
+function render(k){
+  var s=STATES[k];
+  ['lvl','lvl2'].forEach(function(i){document.getElementById(i).textContent=s.lvl});
+  ['tier','tier2'].forEach(function(i){document.getElementById(i).textContent=s.tier});
+  document.getElementById('xptxt').textContent=s.xp+' / '+s.xpNeed+' XP TO LV '+(s.lvl+1);
+  document.getElementById('xptxt2').textContent=s.xp+'/'+s.xpNeed;
+  seg(document.getElementById('xpseg'),s.xp/s.xpNeed*100);
+  seg(document.getElementById('xpseg2'),s.xp/s.xpNeed*100);
+  var rt=document.getElementById('rectxt');
+  if(s.rec===null){rt.innerHTML='<span class="dash">— NO DATA</span>';seg(document.getElementById('recseg'),0);}
+  else{rt.textContent=s.rec+'%';seg(document.getElementById('recseg'),s.rec,'v');}
+  document.getElementById('consist').textContent=s.consist;
+  document.getElementById('logged').textContent=s.logged;
+  document.getElementById('next').textContent=s.next;
+  document.getElementById('wk').textContent=s.wk;
+  ['stats','stats2'].forEach(function(id){
+    var c=document.getElementById(id);c.innerHTML='';
+    s.stats.forEach(function(r){c.appendChild(statRow(r[0],r[1],r[2]))});
+  });
+  ['week','week2'].forEach(function(id){
+    var c=document.getElementById(id);c.innerHTML='';
+    s.week.forEach(function(w,i){c.appendChild(dayCell(w[0],w[1],DAYS[i]))});
+  });
+  document.getElementById('b1').className=k==='d1'?'on':'';
+  document.getElementById('b40').className=k==='d40'?'on':'';
+}
+document.getElementById('b1').onclick=function(){render('d1')};
+document.getElementById('b40').onclick=function(){render('d40')};
+render('d1');
+</script>
+</body>
+</html>

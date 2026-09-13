@@ -9,41 +9,94 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="screen dashboard">
+  <!--
+    Rebuilt against design/rana-dashboard-mockup.html (2026-09-11). The
+    mockup's day1/day40 toggle, .note labels, .phone wrapper and duplicated
+    "…2" mobile markup were scaffolding for comparing two states side by
+    side — none of that is here. This is one responsive layout: two
+    columns above 760px (the mockup's own breakpoint), one column below.
+  -->
 
-    <header class="hud-header">
-      <div>
-        <p id="dashboard-date" class="dashboard-date"></p>
-        <h1 id="dashboard-greeting" class="hud-name"></h1>
+  <!-- Persistent chrome: identity, tier, XP, recovery, level. Pinned via
+       position: sticky in styles.css — does not scroll with the content
+       below it. -->
+  <header class="vitals">
+    <div class="vitals-id">
+      <p id="vitals-name" class="hud-name vitals-name"></p>
+      <p id="vitals-tier" class="hud-tier"></p>
+    </div>
+    <div class="vitals-meter">
+      <div class="vitals-meter-row">
+        <span class="vitals-meter-label">Workload</span>
+        <span id="xp-text" class="vitals-meter-value num"></span>
       </div>
-      <div style="text-align: right;">
-        <p id="dashboard-tier" class="hud-tier"></p>
-        <p id="dashboard-level" class="hud-level num"></p>
+      <div id="xp-bar" class="stat-bar"></div>
+    </div>
+    <div class="vitals-meter vitals-meter--recovery">
+      <div class="vitals-meter-row">
+        <span class="vitals-meter-label">Recovery</span>
+        <span id="recovery-text" class="vitals-meter-value num"></span>
       </div>
-    </header>
+      <div id="recovery-bar" class="stat-bar"></div>
+    </div>
+    <div class="vitals-level">
+      <p class="vitals-meter-label">Level</p>
+      <p id="level-text" class="vitals-level-value num"></p>
+    </div>
+  </header>
 
-    <!-- Today's workout card. Deliberately minimal: day type + a start
-         affordance only, no exercise list — that detail lives on the
-         session detail screen (locked design decision #2 in CLAUDE.md). -->
-    <section id="today-card" class="today-card" data-state="training">
-      <p class="today-eyebrow">Today</p>
-      <h2 id="today-type" class="today-type"></h2>
-      <button id="today-start" class="today-start btn-continue" type="button">
-        Start workout
-      </button>
-      <!-- Rest days are prescribed, not a gap — there is no "train anyway"
-           path (locked design decision #1). -->
-      <p id="today-rest-note" class="today-rest-note"></p>
-    </section>
+  <main class="screen dashboard-main">
+    <div class="dashboard-grid">
 
-    <ul id="week-strip" class="week-strip"></ul>
+      <!-- Session card: today's workout, left-aligned, day name is the
+           largest text on the page (no "Welcome back" greeting). -->
+      <section class="panel session-card">
+        <p id="session-label" class="today-eyebrow"></p>
+        <h1 id="session-day" class="session-day"></h1>
+        <p id="session-focus" class="session-focus"></p>
 
+        <div id="session-meta" class="session-meta">
+          <div><span class="today-eyebrow">Slots</span><span id="meta-slots" class="num"></span></div>
+          <div><span class="today-eyebrow">Working sets</span><span id="meta-sets" class="num"></span></div>
+          <div><span class="today-eyebrow">Est. time</span><span id="meta-time" class="num"></span></div>
+        </div>
+
+        <div id="session-yield" class="session-yield">
+          <span class="today-eyebrow">Stat yield</span>
+          <span id="yield-chips"></span>
+        </div>
+
+        <!-- Rest days are prescribed and non-overridable (locked design
+             decision #1 in CLAUDE.md) — no start affordance at all, not
+             even disabled, when isRestDay is true. -->
+        <button id="session-cta" class="btn-continue" type="button"></button>
+        <p id="rest-note" class="session-focus" hidden></p>
+      </section>
+
+      <div class="dashboard-side">
+        <section class="panel status-matrix">
+          <h2 class="today-eyebrow">Status matrix</h2>
+          <div id="stat-rows"></div>
+        </section>
+
+        <section class="panel microcycle">
+          <h2 class="today-eyebrow">Microcycle · <span id="week-number" class="num"></span></h2>
+          <div id="week-strip" class="microcycle-strip"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="dashboard-footer">
+      <div><span class="today-eyebrow">Consistency</span><span id="footer-consistency" class="num"></span></div>
+      <div><span class="today-eyebrow">Sessions logged</span><span id="footer-logged" class="num"></span></div>
+      <div><span class="today-eyebrow">Next tier</span><span id="footer-next" class="num"></span></div>
+    </div>
   </main>
 
   <script src="data.js" defer></script>
-  <script src="storage.js" defer></script>
   <script src="plan.js" defer></script>
   <script src="game.js" defer></script>
+  <script src="js/storage.js" defer></script>
   <script src="dashboard.js" defer></script>
 </body>
 </html>
